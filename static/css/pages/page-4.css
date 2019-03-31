@@ -1,0 +1,198 @@
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Black-normal.ttf') format('truetype');
+font-weight:900;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Bold-normal.ttf') format('truetype');
+font-weight:700;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-ExtraBold-normal.ttf') format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-ExtraLight-normal.ttf') format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Light-normal.ttf') format('truetype');
+font-weight:300;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Medium-normal.ttf') format('truetype');
+font-weight:500;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Regular-normal.ttf') format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-SemiBold-normal.ttf');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Thin-normal.ttf') format('truetype');
+font-weight:100;
+font-style=normal;
+}
+
+.member2__Image#member2__Image7 {
+float:left;
+background-color:rgba(0, 0, 0, 0);
+padding-right:5px;
+padding-left:10px;
+}
+.Text#Text32 {
+font-family:SairaCondensed;
+font-size:25px;
+color:rgb(255, 255, 255);
+padding-left:15px;
+padding-top:15px;
+}
+.NavigationItem#NavigationItem54 {
+color:rgb(255, 255, 255);
+}
+.NavigationItem#NavigationItem55 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+}
+.NavigationItem#NavigationItem56 {
+color:rgb(255, 255, 255);
+}
+.NavigationItem#NavigationItem57 {
+color:rgb(255, 255, 255);
+}
+.Navigation#Navigation19 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+padding-top:15px;
+padding-left:15px;
+}
+.NavigationItem#NavigationItem59 {
+margin-right:20px;
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+}
+.Navigation#Navigation20 {
+padding-top:15px;
+padding-left:15px;
+}
+.Navbar#Navbar7 {
+background-color:rgb(112, 157, 199);
+background-image:url('../../assets/okta-bg-wave7.svg');
+background-repeat:no-repeat;
+background-size:cover;
+height:64px;
+padding-left:0px;
+padding-right:0px;
+padding-top:0px;
+padding-bottom:0px;
+}
+.Header#Header7 {
+background-color:rgb(112, 157, 199);
+background-image:url('../../assets/okta-bg-wave8.svg');
+background-repeat:no-repeat;
+background-size:cover;
+flex-direction:row !important;;
+}
+.Main#Main7 {
+width:100%;
+height:50vw;
+margin-bottom:40px;
+margin-top:10px;
+margin-left:20px;
+margin-right:20px;
+padding-left:20px;
+padding-right:20px;
+}
+.Title#Title18 {
+color:rgb(67, 67, 67);
+font-size:46px;
+font-weight:600;
+margin-bottom:15px;
+}
+.Text#Text33 {
+margin-bottom:15px;
+color:rgb(67, 67, 67);
+font-size:20px;
+}
+.member2__AuroraSearchBar#member2__AuroraSearchBar4 {
+width:90%;
+}
+.Section#Section28 {
+background-color:rgba(217, 217, 217, 0.3);
+margin-top:20px;
+border-radius:5px;
+}
+.member2__Footer#member2__Footer6 {
+flex-direction:row;;
+justify-content:flex-start;
+align-items:flex-start;
+position:static;
+}
+.Container#Container18 {
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+align-content:center;
+width:100%;
+background-color:rgb(112, 157, 199);
+background-image:url('../../assets/okta-bg-wave9.svg');
+background-repeat:no-repeat;
+background-size:cover;
+}
+.Text#Text35 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+font-size:24px;
+}
+.Image#Image33 {
+height:32px;
+width:32px;
+}
+.Image#Image34 {
+width:32px;
+height:32px;
+}
+.Image#Image35 {
+height:32px;
+}
+.Image#Image36 {
+width:121px;
+height:43px;
+}
+.Section#Section30 {
+display:flex;
+flex-direction:row !important;
+justify-content:space-between !important;
+align-items:center !important;
+width:50%;
+}
+.Section#Section29 {
+width:100%;
+-webkit-box-pack:center !important;
+justify-content:flex-center !important;
+-webkit-box-align:center !important;
+align-items:center !important;
+flex-direction:column !important;
+-webkit-box-orient:horizontal !important;
+-webkit-box-direction:normal !important;
+}

@@ -1,0 +1,68 @@
+
+			<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+			xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+				<url>
+					<loc></loc>
+				</url>
+		
+					<url>
+						<loc>/en/login_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/fr/login_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/en/facecam_livestream_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/fr/facecam_livestream_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/en/edit_user_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/fr/edit_user_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/en/authorized_person_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/fr/authorized_person_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/en/delete_user_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/fr/delete_user_page.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/en/main_menu.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					
+					<url>
+						<loc>/fr/main_menu.html</loc>
+						<lastmod>19:02:43 Feb-2-2019</lastmod>
+					</url>
+					</urlset>

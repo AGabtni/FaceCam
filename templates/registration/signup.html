@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>FaceCam</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="<p>Thanks!</p>">
+
+        {% load staticfiles %}
+        {% load static %}
+        <link type="text/css" rel="stylesheet" href="{% static 'css/normalize-7.0.0.css' %}" />
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+        />
+        {% load static %}
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/_global/Widget/css/Widget.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/_global/Header/css/Header.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/_global/Text/css/Text.css'%}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/_global/NavigationItem/css/NavigationItem.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/_global/Main/css/Main.css'%}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/_global/Title/css/Title.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/member2/AuroraSearchBar/css/AuroraSearchBar.css'%}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/_global/Section/css/Section.css'%}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'widgets/member2/Footer/css/Footer.css'%}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/pages/page-4.css'%}">
+    </head>
+    <style>
+        .cancelButton{
+
+
+        }
+        .myClass{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 40%;
+
+        }
+        .myContainer {
+            padding: 30px;
+            padding-top: 0px;
+            width: 60%;
+            background-color: #F5F5F5;
+            border-radius: 6px;
+            box-shadow: 1px 2px 2px 5px #E8E8E8;
+        }
+
+        form {
+            padding-left: 200px;
+        }
+
+        input {
+            width: 50%;
+        }
+    </style>
+
+    <body id="page-4" pageId="" class="Widget Page" role="page">
+        <header id="Header7" class="Widget Header" role="">
+            {% load staticfiles %}
+            <img src="{% static 'assets/cctv.png' %}" alt="More Info" id="member2__Image7" class="Widget member2__Image" role="">
+
+            </img>
+            <div class="navbar-brand">
+                <div id="Text32" class="Widget Text" role="">
+                    <a href="menu.html">
+                        <span>FaceCam</span>
+                    </a>
+                </div>
+            </div>
+
+        </header>
+        <main id="Main8" class="Widget Main" role="">
+            <div class="Widget Container " id="Container30" role="" a>
+                <h1 id="Title16" class="Widget Title" role="">
+                    <p>Create a new account on facecam</p>
+                </h1>
+                <section class="Section30">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <p>
+                                {{field.label_tag}}
+                                <br>
+                                {{ field }}
+                                {% if field.help_text %}
+                                    <small style="color: grey">{{ field.help_text }}</small>
+                                {% endif %}
+
+                                {% for error in field.errors %}
+
+                                    <small style="color: red">{{ error }}</small>
+                                {% endfor %}
+                                <br>
+                                <br>
+                            </p>
+                        {% endfor %}
+
+                        <!--Last name:
+                        <br>
+                        <input type="text" name="lastname" placeholder="Last name...">
+                        <br>
+                        <br>Address<br>
+                        <input type="text" name="address" placeholder="Address...">
+                        <br>
+                        <br>User ID<br>
+                        <input type="text" name="userid" placeholder="User ID...">
+                        <br>
+                        <br>Birth Date<br>
+                        <input type="text" name="birthdate" placeholder="Birth Date...">
+                        <br>
+                        <br>--->
+                        <section class="myClass">
+                            <button type="submit" class="btn btn-primary" >
+                                Submit
+                            </button>
+
+                        </section>
+                    </form>
+
+                    <form style="display: inline-flex" action="{% url 'login'%}?next={{request.path}}" method="get">
+                        <div>
+                            <button id="member2__Button2" class="btn btn-danger">
+                            Cancel
+                        </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+        <footer id="member2__Footer6" class="Widget member2__Footer" role="" >
+            <div id="Container18" class="Widget Container" role="">
+                <section id="Section29" class="Widget Section" role="">
+                    <div id="Text35" class="Widget Text" role=""><span>Our Partners</span></div>
+                    <section id="Section30" class="Widget Section" role="">
+                        <img src="{% static 'assets/64px-Google__G__Logo.svg2.png'%}" id="Image33" class="Widget Image" role="">
+
+                        </img>
+                        <img src="{% static 'assets/intel.png'%}" id="Image34" class="Widget Image" role="">
+
+                        </img>
+                        <img src="{% static 'assets/Cisco_logo.svg'%}" id="Image35" class="Widget Image" role="">
+                        </img>
+                        <img src="{% static 'assets/uottawa_hor_white.png'%}" id="Image36" class="Widget Image" role="">
+                        </img>
+                    </section>
+                </section>
+            </div>
+        </footer>
+    </body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/Widget/js/Widget.js'%}"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/Header/js/Header.js'%}"></script>
+    <script type="text/javascript" src="{% static 'widgets/member2/Image/js/Image.js'%}"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/NavigationItem/js/navigationItem.js' %}"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/Main/js/Main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/Container/js/Container.js' %}"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/Title/js/Title.js' %}"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/Section/js/Section.js' %}"></script>
+    <script type="text/javascript" src="{% static 'widgets/member2/Footer/js/Footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'widgets/_global/Image/js/Image.js' %}"></script>
+
+
+</html>

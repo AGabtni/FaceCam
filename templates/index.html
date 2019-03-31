@@ -1,0 +1,39 @@
+
+			<html>
+				<noscript>
+					<meta http-equiv='refresh' content='0; url=/login_page.html' />
+				</noscript>
+				<body>
+					<script type='text/javascript'>
+						var availableLangs = ['en', 'fr'];
+						var homePages = {"en":"login_page","fr":"login_page"};
+
+						var userLang = navigator.language || navigator.userLanguage;
+						var tgtLang;
+
+						for (var i = 0; i < availableLangs.length && !tgtLang; i++)
+						{
+							if (userLang == availableLangs[i])
+								tgtLang = userLang;
+						}
+
+						if (!tgtLang)
+						{
+							var preLang = userLang.split('-')[0];
+							
+							for (var i = 0; i < availableLangs.length && !tgtLang; i++)
+							{
+								if (preLang == availableLangs[i].split('-')[0])
+									tgtLang = availableLangs[i];
+							}
+
+							if (!tgtLang)
+								tgtLang = 'en';
+						}
+
+						var homePage = homePages[tgtLang];
+
+						window.location.replace(tgtLang + '/' + homePage + '.html');
+					</script>
+				</body>
+			</html>

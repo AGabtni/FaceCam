@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>FaceCam</title>
+        <meta name="description" content="More info">
+        <meta name="keywords" content="More info">
+        {% load staticfiles %}
+        {% load static %}
+        <link rel="shortcut icon" type="image/x-icon" href="../../static/assets">
+        <link rel="shortcut icon" type="image/x-icon" href="../../static/assets">
+        <link rel="alternate" href="/facecam_livestream_page.html" hreflang="en" />
+        <link rel="alternate" href="../fr/facecam_livestream_page.html" hreflang="fr" />
+        <link rel="alternate" href="/facecam_livestream_page.html" hreflang="x-default" />
+        <link type="text/css" rel="stylesheet" href="../../static/css/normalize-7.0.0.css"/>
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Widget/css/Widget.css?v=1.0.24"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Header/css/Header.css?v=1.0.77-beta"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Text/css/Text.css?v=1.0.2"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/NavigationItem/css/NavigationItem.css?v=1.0.1"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Main/css/Main.css?v=1.0.4-beta"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Section/css/Section.css?v=1.0.33-beta"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Title/css/Title.css?v=1.0.110-beta"/>
+        <link type="text/css" rel="stylesheet" href="../../static/widgets/member2/Footer/css/Footer.css?v=1.0.16-beta"/>
+        <link rel="stylesheet" type="text/css" href="../../static/css/pages/page-3.css?v=1549135301">
+    </head>
+    <body id="page-3" pageId="" class="Widget Page" role="page">
+        <script async type="text/javascript" th:src="@{/opencv/opencv.js}"></script>
+
+        <header id="Header2" class="Widget Header" role="">
+            <a href="page-8" id="member2__Image2" class="Widget member2__Image" role=""><img src="../../static/assets/cctv.png"></img></a>
+            <nav class="Widget Navbar navbar navbar-toggleable-md navbar-light bg-faded" id="Navbar2" role="navigation navbar">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#Navbar2Responsive" aria-controls="Navbar2Responsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-brand">
+                    <div id="Text16" class="Widget Text" role=""><a href="{% url 'index' %}"<span>FaceCam</span></div>
+                </div>
+                <div class="collapse navbar-collapse justify-content-between" id="Navbar2Responsive">
+                    {% if user.is_authenticated %}
+                        <ul class="Widget Navigation navbar-nav nav" id="Navigation3" role="navigation">
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem7" role="menuitem"> <a href="#" >{{ user.get_username }}</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem8" role="menuitem"> <a href="#" >FaceCam LiveStream</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem9" role="menuitem"> <a href="#" >Documentations</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem10" role="menuitem"> <a href="#" >Contact</a> </li>
+                            <li  style="color:white;" class="Widget NavigationItem nav-item nav-link" id="NavigationItem11" role="menuitem">
+                                <a href="{% url 'logout'%}" >Log Out</a>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <li style="color:white;" class="Widget NavigationItem nav-item nav-link" id="NavigationItem72" role="menuitem">
+                            <a href="{% url 'login'%}?next={{request.path}}" >Login</a>
+                        </li>
+                    {% endif %}
+                </div>
+            </nav>
+        </header>
+        <main id="Main8" class="Widget Main" role="">
+            <div id="Container19" class="Widget Container" role="">
+                <section id="Section31" class="Widget Section" role="">
+                    <h1 id="Title19" class="Widget Title" role="">
+                        <p>FaceCam Live Stream&nbsp;</p>
+                    </h1>
+                </section>
+                 <div id="container" align="center">
+                    <canvas id="video-canvas">
+
+                        No stream available
+                    </canvas>
+                     <canvas id="output" width=640 height=480 style="max-width: 100%"></canvas>
+
+  				 </div>
+
+  				<div class="text-center">
+    				<input type="checkbox" id="face" name="classifier" value="face" checked>
+    				<label for="face">face</label>
+    				<input type="checkbox" id="eye" name="cascade" value="eye">
+    				<label for="eye">eye</label>
+  				</div>
+
+            </div>
+            <div id="Container20" class="Widget Container" role=""></div>
+            <div id="Container21" class="Widget Container" role=""></div>
+            <div id="Container22" class="Widget Container" role=""></div>
+        </main>
+        <footer id="member2__Footer2" class="Widget member2__Footer" role="">
+            <div id="Container12" class="Widget Container" role="">
+                <section id="Section18" class="Widget Section" role="">
+                    <div id="Text23" class="Widget Text" role=""><span>Our Partners</span></div>
+                    <section id="Section19" class="Widget Section" role=""><img src="../../static/assets/64px-Google__G__Logo.svg2.png" alt="Title:" id="Image17" class="Widget Image" role=""></img>
+<img src="../../static/assets/intel.png" alt="entered the room:" id="Image18" class="Widget Image" role=""></img>
+<img src="../../static/assets/Cisco_logo.svg" id="Image19" class="Widget Image" role=""></img>
+<img src="../../static/assets/uottawa_hor_white.png" id="Image20" class="Widget Image" role=""></img></section>
+                </section>
+            </div>
+        </footer>
+    </body>
+    {% load staticfiles %}
+    {% load static %}
+    <script type="text/javascript" src="{% static  'js/jsmpeg.min.js'%}"></script>
+    <script type="text/javascript">
+        var canvas = document.getElementById('video-canvas');
+		var url = 'ws://192.168.0.153:8085/';
+		var player = new JSMpeg.Player(url, {canvas: canvas, disableGl: true});
+
+    </script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+	<script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"></script>
+	<script>
+  		var Module = {
+    	 wasmBinaryFile: 'https://huningxin.github.io/opencv.js/build/wasm/opencv_js.wasm',
+    preRun: [function() {
+      Module.FS_createPreloadedFile('/', 'haarcascade_eye.xml', 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_eye.xml', true, false);
+      Module.FS_createPreloadedFile('/', 'haarcascade_frontalface_default.xml', 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml', true, false);
+      Module.FS_createPreloadedFile('/', 'haarcascade_profileface.xml', 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_profileface.xml', true, false);
+    }],
+    _main: function() {opencvIsReady();}
+  };
+</script> <script  src="js/index.js"></script>
+<script async src="https://huningxin.github.io/opencv.js/build/wasm/opencv.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/Widget/js/Widget.js?v=1.0.24"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/Header/js/Header.js?v=1.0.77-beta"></script>
+    <script type="text/javascript" src="../../static/widgets/member2/Image/js/Image.js?v=1.0.34-beta"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/NavigationItem/js/navigationItem.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/Main/js/Main.js?v=1.0.4-beta"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/Container/js/Container.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/Section/js/Section.js?v=1.0.33-beta"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/Title/js/Title.js?v=1.0.110-beta"></script>
+    <script type="text/javascript" src="../../static/widgets/member2/Footer/js/Footer.js?v=1.0.16-beta"></script>
+    <script type="text/javascript" src="../../static/widgets/_global/Image/js/Image.js?v=1.0.42-beta"></script>
+
+    <!--NEW FACE DECTOR HERE-->
+    <script type="text/javascript">
+
+        var netDet = undefined, netRecogn = undefined;
+        var persons = {};
+
+        //1- [Run face detection model]
+        function detectFaces(img) {
+            var blob = cv.blobFromImage(img, 1, {width: 128, height: 96}, [104, 177, 123, 0], false, false);
+            netDet.setInput(blob);
+            var out = netDet.forward();
+            var faces = [];
+            for (var i = 0, n = out.data32F.length; i < n; i += 7) {
+                var confidence = out.data32F[i + 2];
+                var left = out.data32F[i + 3] * img.cols;
+                var top = out.data32F[i + 4] * img.rows;
+                var right = out.data32F[i + 5] * img.cols;
+                var bottom = out.data32F[i + 6] * img.rows;
+                left = Math.min(Math.max(0, left), img.cols - 1);
+                right = Math.min(Math.max(0, right), img.cols - 1);
+                bottom = Math.min(Math.max(0, bottom), img.rows - 1);
+                top = Math.min(Math.max(0, top), img.rows - 1);
+                if (confidence > 0.5 && left < right && top < bottom) {
+                    faces.push({x: left, y: top, width: right - left, height: bottom - top})
+                }
+            }
+            blob.delete();
+            out.delete();
+            return faces;
+        };
+
+        //! [Get 128 floating points feature vector]
+        function face2vec(face) {
+            var blob = cv.blobFromImage(face, 1.0 / 255, {width: 96, height: 96}, [0, 0, 0, 0], true, false)
+            netRecogn.setInput(blob);
+            var vec = netRecogn.forward();
+            blob.delete();
+            return vec;
+        };
+
+
+        //! [Recognize]
+        function recognize(face) {
+            var vec = face2vec(face);
+            var bestMatchName = 'unknown';
+            var bestMatchScore = 0.5;  // Actually, the minimum is -1 but we use it as a threshold.
+            for (name in persons) {
+                var personVec = persons[name];
+                var score = vec.dot(personVec);
+                if (score > bestMatchScore) {
+                    bestMatchScore = score;
+                    bestMatchName = name;
+                }
+            }
+            vec.delete();
+            return bestMatchName;
+        };
+
+
+        function loadModels(callback) {
+            var utils = new Utils('');
+            var proto = 'https://raw.githubusercontent.com/opencv/opencv/master/samples/dnn/face_detector/deploy.prototxt';
+            var weights = 'https://raw.githubusercontent.com/opencv/opencv_3rdparty/dnn_samples_face_detector_20180205_fp16/res10_300x300_ssd_iter_140000_fp16.caffemodel';
+            var recognModel = 'https://raw.githubusercontent.com/pyannote/pyannote-data/master/openface.nn4.small2.v1.t7';
+            utils.createFileFromUrl('face_detector.prototxt', proto, () => {
+                document.getElementById('status').innerHTML = 'Downloading face_detector.caffemodel';
+                utils.createFileFromUrl('face_detector.caffemodel', weights, () => {
+                    document.getElementById('status').innerHTML = 'Downloading OpenFace model';
+                    utils.createFileFromUrl('face_recognition.t7', recognModel, () => {
+                        document.getElementById('status').innerHTML = '';
+                        netDet = cv.readNetFromCaffe('face_detector.prototxt', 'face_detector.caffemodel');
+                        netRecogn = cv.readNetFromTorch('face_recognition.t7');
+                        callback();
+                    });
+                });
+            });
+        };
+        function main() {
+            //Create cam object :
+            var output = document.getElementById('output');
+            var camera = document.createElement("video");
+            camera.setAttribute("width", output.width);
+            camera.setAttribute("height", output.height);
+
+
+
+
+        }
+
+
+
+
+
+    </script>
+    <script type="text/javascript">
+
+		let videoWidth = 640;
+		let videoHeight = 480;
+
+		// whether streaming video from the camera.
+		let streaming = true;
+
+		let detectFace = document.getElementById('face');
+		let detectEye = document.getElementById('eye');
+
+
+		let faceClassifier = null;
+		let eyeClassifier = null;
+
+		let src = null;
+		let dstC1 = null;
+		let dstC3 = null;
+		let dstC4 = null;
+
+		let canvasBuffer = null;
+		let canvasBufferCtx = null;
+
+		function startVideoProcessing() {
+		  if (!streaming)
+		  {
+		      console.warn("Please startup your webcam");
+		      return;
+		  }
+		  stopVideoProcessing();
+		  canvasVideo = document.getElementById('video-canvas');
+
+		  canvasBuffer = document.createElement('canvas');
+		  canvasBuffer.width = videoWidth;
+		  canvasBuffer.height = videoHeight;
+
+		  canvasBufferCtx = canvasBuffer.getContext('2d');
+
+		  srcMat = new cv.Mat(videoHeight, videoWidth, cv.CV_8UC4);
+		  grayMat = new cv.Mat(videoHeight, videoWidth, cv.CV_8UC1);
+
+		  faceClassifier = new cv.CascadeClassifier();
+		  faceClassifier.load('haarcascade_frontalface_default.xml');
+
+		  eyeClassifier = new cv.CascadeClassifier();
+		  eyeClassifier.load('haarcascade_eye.xml');
+
+		  requestAnimationFrame(processVideo);
+		}
+
+		function processVideo() {
+		  stats.begin();
+		  canvasVideoCtx = canvasVideo.getContext('2d');
+		  //canvasInputCtx.drawImage(canvasVideo, 0, 0, videoWidth, videoHeight);
+		  let imageData = canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight);
+		  srcMat.data.set(imageData.data);
+		  cv.cvtColor(srcMat, grayMat, cv.COLOR_RGBA2GRAY);
+		  let faces = [];
+		  let eyes = [];
+		  let size;
+		  if (true) {
+		    let faceVect = new cv.RectVector();
+		    let faceMat = new cv.Mat();
+		    if (false) {
+		      cv.pyrDown(grayMat, faceMat);
+		      size = faceMat.size();
+		    } else {
+		      cv.pyrDown(grayMat, faceMat);
+		      cv.pyrDown(faceMat, faceMat);
+		      size = faceMat.size();
+		    }
+		    faceClassifier.detectMultiScale(faceMat, faceVect);
+		    for (let i = 0; i < faceVect.size(); i++) {
+		      let face = faceVect.get(i);
+		      faces.push(new cv.Rect(face.x, face.y, face.width, face.height));
+		      if (false) {
+		        let eyeVect = new cv.RectVector();
+		        let eyeMat = faceMat.getRoiRect(face);
+		        eyeClassifier.detectMultiScale(eyeMat, eyeVect);
+		        for (let i = 0; i < eyeVect.size(); i++) {
+		          let eye = eyeVect.get(i);
+		          eyes.push(new cv.Rect(face.x + eye.x, face.y + eye.y, eye.width, eye.height));
+		        }
+		        eyeMat.delete();
+		        eyeVect.delete();
+		      }
+		    }
+		    faceMat.delete();
+		    faceVect.delete();
+		  } else {
+		    if (false) {
+		      let eyeVect = new cv.RectVector();
+		      let eyeMat = new cv.Mat();
+		      cv.pyrDown(grayMat, eyeMat);
+		      size = eyeMat.size();
+		      eyeClassifier.detectMultiScale(eyeMat, eyeVect);
+		      for (let i = 0; i < eyeVect.size(); i++) {
+		        let eye = eyeVect.get(i);
+		        eyes.push(new cv.Rect(eye.x, eye.y, eye.width, eye.height));
+		      }
+		      eyeMat.delete();
+		      eyeVect.delete();
+		    }
+		  }
+
+		  drawResults(canvasVideoCtx, faces, 'red', size);
+		  drawResults(canvasVideoCtx, eyes, 'yellow', size);
+		  stats.end();
+		  requestAnimationFrame(processVideo);
+		}
+
+		function drawResults(ctx, results, color, size) {
+		  for (let i = 0; i < results.length; ++i) {
+		    let rect = results[i];
+		    let xRatio = videoWidth/size.width;
+		    let yRatio = videoHeight/size.height;
+		    ctx.lineWidth = 3;
+		    ctx.strokeStyle = color;
+		    ctx.strokeRect(rect.x*xRatio, rect.y*yRatio, rect.width*xRatio, rect.height*yRatio);
+		  }
+		}
+
+		function stopVideoProcessing() {
+		  if (src != null && !src.isDeleted()) src.delete();
+		  if (dstC1 != null && !dstC1.isDeleted()) dstC1.delete();
+		  if (dstC3 != null && !dstC3.isDeleted()) dstC3.delete();
+		  if (dstC4 != null && !dstC4.isDeleted()) dstC4.delete();
+		}
+
+		function stopCamera() {
+		  if (!streaming) return;
+		  stopVideoProcessing();
+		  document.getElementById("canvasOutput").getContext("2d").clearRect(0, 0, width, height);
+		  video.pause();
+		  video.srcObject=null;
+		  stream.getVideoTracks()[0].stop();
+		  streaming = false;
+		}
+
+		function initUI() {
+		  stats = new Stats();
+		  stats.showPanel(0);
+		  document.getElementById('container').appendChild(stats.dom);
+		}
+
+		function opencvIsReady() {
+		  console.log('OpenCV.js is ready');
+		  initUI();
+		  startVideoProcessing();
+		}
+	</script>
+	-->
+</html>

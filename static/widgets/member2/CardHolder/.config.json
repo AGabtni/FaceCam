@@ -1,0 +1,95 @@
+{
+    "schema_version": "2.0.1",
+    "glot_version": "1.0.30",
+    "client_class_info": {
+        "className": "member2__CardHolder",
+        "parentClassName": "__Widget",
+        "methods": {
+            "initClass": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "showFilters": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "hideFilters": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "getPopularSearches": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "sprintf": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "onReady": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "makeArticleCards": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "render": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "formatTemplate": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "countFilterValues": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "getFilterFormat": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "syncCheckBoxState": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "makeFilter": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "getFilters": {
+                "isStatic": false,
+                "isEmpty": false
+            },
+            "removeFilterSelection": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "onApplyButtonClick": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "onResetButtonClick": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "doSomethigStatic": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "onFilterBarClick": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "onSideBarClick": {
+                "isStatic": true,
+                "isEmpty": false
+            },
+            "onSearch": {
+                "isStatic": true,
+                "isEmpty": false
+            }
+        },
+        "hasCode": true
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "lbl_filters": "Filters",
+    "lbl_tasks": "Task",
+    "lbl_departments": "Departments",
+    "lbl_focus": "Focus",
+    "btn_apply": "Apply",
+    "btn_reset": "Reset",
+    "lbl_search": "Search",
+    "title_not_found": "Not Found",
+    "lbl_search_not_found": "Sorry, we didn\u2019t find anything for your search. Try another?",
+    "title_popular_articles": "Here are the some popular articles:",
+    "lbl_readmore": "Read More"
+}

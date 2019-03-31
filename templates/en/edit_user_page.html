@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Create a brand new user&nbsp;</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="<p>
+        Thanks!
+    </p>
+    ">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/assets">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/assets">
+    <link rel="alternate" href="/edit_user_page.html" hreflang="en" />
+    <link rel="alternate" href="../fr/edit_user_page.html" hreflang="fr" />
+    <link rel="alternate" href="/edit_user_page.html" hreflang="x-default" />
+    <link type="text/css" rel="stylesheet" href="../../static/css/normalize-7.0.0.css"/>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Widget/css/Widget.css?v=1.0.24"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Header/css/Header.css?v=1.0.77-beta"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Text/css/Text.css?v=1.0.2"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/NavigationItem/css/NavigationItem.css?v=1.0.1"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Main/css/Main.css?v=1.0.4-beta"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Title/css/Title.css?v=1.0.110-beta"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/member2/AuroraSearchBar/css/AuroraSearchBar.css?v=1.0.4"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Section/css/Section.css?v=1.0.33-beta"/>
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/member2/Footer/css/Footer.css?v=1.0.16-beta"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/pages/page-4.css?v=1549135301">
+</head>
+<body id="page-4" pageId="" class="Widget Page" role="page">
+    <header id="Header7" class="Widget Header" role="">
+        <img src="../../static/assets/cctv.png" alt="More Info" id="member2__Image7" class="Widget member2__Image" role=""></img>
+
+        <nav class="Widget Navbar navbar navbar-toggleable-md navbar-light bg-faded" id="Navbar7" role="navigation navbar">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#Navbar7Responsive" aria-controls="Navbar7Responsive" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+            <div class="navbar-brand">
+                <div id="Text32" class="Widget Text" role=""><a href="menu.html"><span>FaceCam</span></a></div>
+            </div>
+            <div class="collapse navbar-collapse justify-content-start" id="Navbar7Responsive">
+                 {% if user.is_authenticated %}
+                        <ul class="Widget Navigation navbar-nav nav" id="Navigation3" role="navigation">
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem7" role="menuitem"> <a href="#" >{{ user.get_username }}</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem8" role="menuitem"> <a href="#" >FaceCam LiveStream</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem9" role="menuitem"> <a href="#" >Documentations</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem10" role="menuitem"> <a href="#" >Contact</a> </li>
+                            <li  style="color:white;" class="Widget NavigationItem nav-item nav-link" id="NavigationItem11" role="menuitem">
+                                <a href="{% url 'logout'%}" >Log Out</a>
+                            </li>
+                        </ul>
+                 {% else %}
+                        <li style="color:white;" class="Widget NavigationItem nav-item nav-link" id="NavigationItem72" role="menuitem">
+                            <a href="{% url 'login'%}?next={{request.path}}" >Login</a>
+                        </li>
+                 {% endif %}
+            </div>
+        </nav>
+    </header>
+    <main id="Main7" class="Widget Main" role="">
+        <div class="Widget Container " id="Container17" role="">
+            <h1 id="Title18" class="Widget Title" role="">
+                <p>Edit user information</p>
+            </h1>
+            <div id="Text33" class="Widget Text" role=""><span>Edit an user informations from the database by using user ID.</span></div>
+            <div id="member2__AuroraSearchBar4" class="Widget member2__AuroraSearchBar" role="">
+                <form class="form-inline">
+                    <label for="search" class="sr-only">
+                        <div en="Search" _META_=""></div>
+                    </label>
+                    <input type="text" class="form-control" id="search" placeholder="Search"></input>
+                </form>
+            </div>
+            <section class="Widget Section " id="Section28" role="">
+                <div id="Text34" class="Widget Text" role=""><span>Differents results shown.....&nbsp;</span></div>
+            </section>
+        </div>
+    </main>
+    <footer id="member2__Footer6" class="Widget member2__Footer" role="">
+        <div id="Container18" class="Widget Container" role="">
+            <section id="Section29" class="Widget Section" role="">
+                <div id="Text35" class="Widget Text" role=""><span>Our Partners</span></div>
+                <section id="Section30" class="Widget Section" role=""><img src="../../static/assets/64px-Google__G__Logo.svg2.png" id="Image33" class="Widget Image" role=""></img>
+<img src="../../static/assets/intel.png" id="Image34" class="Widget Image" role=""></img>
+<img src="../../static/assets/Cisco_logo.svg" id="Image35" class="Widget Image" role=""></img>
+<img src="../../static/assets/uottawa_hor_white.png" id="Image36" class="Widget Image" role=""></img></section>
+            </section>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Widget/js/Widget.js?v=1.0.24"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Header/js/Header.js?v=1.0.77-beta"></script>
+<script type="text/javascript" src="../../static/widgets/member2/Image/js/Image.js?v=1.0.34-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/NavigationItem/js/navigationItem.js?v=1.0.1"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Main/js/Main.js?v=1.0.4-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Container/js/Container.js?v=1.0.1"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Title/js/Title.js?v=1.0.110-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Section/js/Section.js?v=1.0.33-beta"></script>
+<script type="text/javascript" src="../../static/widgets/member2/Footer/js/Footer.js?v=1.0.16-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Image/js/Image.js?v=1.0.42-beta"></script>
+<script type="text/javascript">
+
+(function() {
+			function onReady() {
+				(function() { 
+            
+         })();
+			}
+
+			(document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') ?
+				onReady() : document.addEventListener('DOMContentLoaded', onReady);
+})();
+</script>
+</html>

@@ -1,0 +1,185 @@
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Black-normal.ttf') format('truetype');
+font-weight:900;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Bold-normal.ttf') format('truetype');
+font-weight:700;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-ExtraBold-normal.ttf') format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-ExtraLight-normal.ttf') format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Light-normal.ttf') format('truetype');
+font-weight:300;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Medium-normal.ttf') format('truetype');
+font-weight:500;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Regular-normal.ttf') format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-SemiBold-normal.ttf') format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url('../../fonts/custom1/custom1-Thin-normal.ttf') format('truetype');
+font-weight:100;
+font-style=normal;
+}
+
+.member2__Image#member2__Image2 {
+float:left;
+background-color:rgba(0, 0, 0, 0);
+padding-right:5px;
+padding-left:10px;
+}
+.Text#Text16 {
+font-family:SairaCondensed;
+font-size:25px;
+color:rgb(255, 255, 255);
+padding-left:15px;
+padding-top:15px;
+}
+.NavigationItem#NavigationItem7 {
+color:rgb(255, 255, 255);
+}
+.NavigationItem#NavigationItem8 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+}
+.NavigationItem#NavigationItem9 {
+color:rgb(255, 255, 255);
+}
+.NavigationItem#NavigationItem10 {
+color:rgb(255, 255, 255);
+}
+.Navigation#Navigation3 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+padding-top:15px;
+padding-left:15px;
+}
+.NavigationItem#NavigationItem12 {
+margin-right:20px;
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+}
+.Navigation#Navigation4 {
+padding-top:15px;
+padding-left:15px;
+}
+.Navbar#Navbar2 {
+background-color:rgba(0, 0, 0, 0);
+height:64px;
+padding-left:0px;
+padding-right:0px;
+padding-top:0px;
+padding-bottom:0px;
+}
+.Header#Header2 {
+background-color:rgb(112, 157, 199);
+background-image:url('../../assets/okta-bg-wave12.svg');
+background-repeat:no-repeat;
+background-size:cover;
+flex-direction:row !important;;
+}
+.Main#Main8 {
+height:50vw;
+width:100%;
+}
+.Section#Section31 {
+justify-content:flex-center !important;
+text-align:center;
+-webkit-box-pack:center !important;
+-webkit-box-align:center !important;
+align-items:center !important;
+flex-direction:column !important;
+-webkit-box-orient:horizontal !important;
+-webkit-box-direction:normal !important;
+}
+.Iframe#Iframe1 {
+height:100%;
+width:100%;
+background-color:rgb(217, 217, 217);
+}
+.member2__Footer#member2__Footer2 {
+flex-direction:row;;
+justify-content:flex-start;
+align-items:flex-start;
+position:static;
+}
+.Container#Container12 {
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+align-content:center;
+width:100%;
+background-color:rgb(112, 157, 199);
+background-image:url('../../assets/okta-bg-wave13.svg');
+background-repeat:no-repeat;
+background-size:cover;
+}
+.Text#Text23 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+font-size:24px;
+}
+.Image#Image17 {
+height:32px;
+width:32px;
+}
+.Image#Image18 {
+width:32px;
+height:32px;
+}
+.Image#Image19 {
+height:32px;
+}
+.Image#Image20 {
+width:121px;
+height:43px;
+}
+.Section#Section19 {
+display:flex;
+flex-direction:row !important;
+justify-content:space-between !important;
+align-items:center !important;
+width:50%;
+}
+.Section#Section18 {
+width:100%;
+-webkit-box-pack:center !important;
+justify-content:flex-center !important;
+-webkit-box-align:center !important;
+align-items:center !important;
+flex-direction:column !important;
+-webkit-box-orient:horizontal !important;
+-webkit-box-direction:normal !important;
+}

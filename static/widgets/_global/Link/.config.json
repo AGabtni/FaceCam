@@ -1,0 +1,23 @@
+{
+    "schema_version": "2.0.1",
+    "glot_version": "1.0.30",
+    "client_class_info": {
+        "className": "Link",
+        "parentClassName": "__Widget",
+        "methods": {
+            "initClass": {
+                "isStatic": true,
+                "isEmpty": true
+            },
+            "render": {
+                "isStatic": false,
+                "isEmpty": true
+            },
+            "onMessage": {
+                "isStatic": false,
+                "isEmpty": true
+            }
+        },
+        "hasCode": false
+    }
+}

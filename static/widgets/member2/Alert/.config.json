@@ -1,0 +1,182 @@
+{
+    "schema_version": "2.0.1",
+    "toolbar": {
+        "widget": "Toolbar",
+        "id": "",
+        "class": "panel right",
+        "data": {
+            "title_bar": {
+                "left": {
+                    "class": "fa leftArrow",
+                    "value": {
+                        "en": "Back",
+                        "fr": "Back"
+                    },
+                    "ancestor": true
+                },
+                "mid": {
+                    "value": {
+                        "en": "New Widget",
+                        "fr": "New Widget"
+                    }
+                },
+                "right": true
+            },
+            "menuBar": {
+                "copyType": "widget",
+                "copyName": "NewWidget",
+                "leftMenus": [
+                    {
+                        "class": "copy",
+                        "enable": true,
+                        "state": true
+                    },
+                    {
+                        "class": "paste",
+                        "enable": true,
+                        "state": false
+                    },
+                    {
+                        "class": "deleteWidget",
+                        "enable": true,
+                        "state": true
+                    },
+                    {
+                        "class": "mobileScreen",
+                        "enable": true,
+                        "state": true
+                    },
+                    {
+                        "class": "fullScreen",
+                        "enable": true,
+                        "state": true
+                    }
+                ],
+                "rightMenus": "lang"
+            },
+            "widget_functions": {
+                "label": {
+                    "en": "NewWidget",
+                    "fr": "New Widget"
+                },
+                "link": {
+                    "linkContent": {
+                        "en": "Link content",
+                        "fr": "La Link content"
+                    },
+                    "unlinkContent": {
+                        "en": "Unlink",
+                        "fr": "Unlink"
+                    }
+                },
+                "widgetName": "",
+                "id": "NewWidget",
+                "currentId": "",
+                "icon": "",
+                "statistics": true
+            },
+            "widget_options": {
+                "module_title": {
+                    "title": {
+                        "en": "APPEARANCE OPTIONS",
+                        "fr": "APPEARANCE OPTIONS"
+                    },
+                    "tip": {
+                        "id": "NewWidget_appearance",
+                        "content": {
+                            "en": "Change settings for this Widget",
+                            "fr": "Change settings for this Widget"
+                        }
+                    }
+                },
+                "fieldset": {
+                    "class": "fieldset",
+                    "widget": "Fieldset",
+                    "data": []
+                },
+                "styleFieldset": {
+                    "class": "fieldset widgetStyle",
+                    "widget": "Fieldset",
+                    "data": [
+                        {
+                            "type": "general",
+                            "label": {
+                                "en": "Properties",
+                                "fr": "Properties"
+                            },
+                            "function": "enterAppearanceOptions"
+                        },
+                        {
+                            "type": "general",
+                            "label": {
+                                "en": "Styles",
+                                "fr": "Styles"
+                            },
+                            "function": "enterStyleOptions"
+                        }
+                    ]
+                }
+            },
+            "content_option": {
+                "module_title": {
+                    "title": {
+                        "en": "Content OPTIONS",
+                        "fr": "Content OPTIONS"
+                    },
+                    "tip": {
+                        "id": "link_content",
+                        "content": {
+                            "en": "Change settings for this Widget",
+                            "fr": "Change settings for this Widget"
+                        }
+                    }
+                },
+                "fieldset": {
+                    "class": "fieldset",
+                    "widget": "Fieldset",
+                    "data": [
+                        {
+                            "type": "text",
+                            "label": {
+                                "en": "Link",
+                                "fr": "Link"
+                            },
+                            "data-target": "link"
+                        }
+                    ]
+                }
+            },
+            "widget_selection": [
+                {
+                    "module_title": {
+                        "title": {
+                            "en": "WIDGETS",
+                            "fr": "WIDGETS"
+                        },
+                        "tip": {
+                            "id": "section_selection",
+                            "content": {
+                                "en": "You can select sub widget in this parent page",
+                                "fr": "You can select sub widget in this parent page"
+                            }
+                        }
+                    },
+                    "addable": {
+                        "label": {
+                            "en": "Add",
+                            "fr": "Add"
+                        },
+                        "class": "add_widget"
+                    },
+                    "fieldset": {
+                        "class": "fieldset",
+                        "widget": "Fieldset",
+                        "data": []
+                    }
+                }
+            ],
+            "extra": ""
+        }
+    },
+    "glot_version": "1.0.30"
+}

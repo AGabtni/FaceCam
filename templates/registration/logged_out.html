@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/assets">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/assets">
+    <link rel="alternate" href="/login_page.html" hreflang="en" />
+    <link rel="alternate" href="../fr/login_page.html" hreflang="fr" />
+    <link rel="alternate" href="/login_page.html" hreflang="x-default" />
+    <link type="text/css" rel="stylesheet" href="../../static/css/normalize-7.0.0.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Widget/css/Widget.css?v=1.0.24" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Header/css/Header.css?v=1.0.77-beta" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Text/css/Text.css?v=1.0.2" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/NavigationItem/css/NavigationItem.css?v=1.0.1" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Main/css/Main.css?v=1.0.4-beta" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Title/css/Title.css?v=1.0.110-beta" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/_global/Section/css/Section.css?v=1.0.33-beta" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/member2/Button/css/Button.css?v=1.0.146-beta" />
+    <link type="text/css" rel="stylesheet" href="../../static/widgets/member2/Footer/css/Footer.css?v=1.0.16-beta" />
+    <link type="text/css" rel="stylesheet" href="../../static/css/pages/page-1.css?v=1549135301" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pages/page-1.css' %}" />
+
+</head>
+
+<body id="page-1" pageId="" class="Widget Page" role="page">
+    <header id="Header1" class="Widget Header" role="">
+        <a href="page-1" id="member2__Image4" class="Widget member2__Image" role=""><img src="../../static/assets/cctv.png"></img>
+        </a>
+        <nav class="Widget Navbar navbar navbar-toggleable-md navbar-light bg-faded" id="Navbar4" role="navigation navbar">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#Navbar4Responsive"
+                aria-controls="Navbar4Responsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+</button>
+            <div class="navbar-brand">
+                <div id="Text109" class="Widget Text" role=""><span>FaceCam</span></div>
+            </div>
+            <div class="collapse navbar-collapse justify-content-between" id="Navbar4Responsive">
+                <ul class="Widget Navigation navbar-nav nav" id="Navigation11" role="navigation">
+                    <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem54" role="menuitem"> <a href="#">Home</a> </li>
+                    <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem55" role="menuitem"> <a href="#">Documentations</a> </li>
+                    <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem56" role="menuitem"> <a href="#">Contact</a> </li>
+                </ul>
+                <ul class="Widget Navigation navbar-nav nav" id="Navigation12" role="navigation">
+                    <li class="Widget NavigationItem nav-item nav-link dropdown" id="NavigationItem57" role="menuitem">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Languages</a>
+                        <div class="dropdown-menu" role="menu">
+                            <div id="DropdownItem4" class="Widget DropdownItem" role="menuitem">English</div>
+                            <div id="DropdownItem5" class="Widget DropdownItem" role="menuitem">French</div>
+                            <div class="Widget DropdownDivider dropdown-divider" id="DropdownDivider2" role="menuitem"></div>
+                            <div id="DropdownItem6" class="Widget DropdownItem" role="menuitem">Chinese</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="Main3" class="Widget Main" role="">
+        <div id="Container8" class="Widget Container" role="">
+            <h1 id="Title19" class="Widget Title" role="">
+                FaceCam
+            </h1>
+            <div id="Text110" class="Widget Text" role=""><span>All rights reserved©</span></div>
+
+            <!--Forms section -->
+            <section id="Section46" class="Widget Section" role="">
+                <div id="Container9" class="Widget Container" role="form">
+                    <div id="Text110" class="Widget Text" role="">
+                        <p>Logged out!</p>
+                        <a href="{% url 'login'%}?next={{request.path}}">Click here to login again.</a>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <footer id="member2__Footer1" class="Widget member2__Footer" role="">
+        <div id="Container10" class="Widget Container" role="">
+            <section id="Section48" class="Widget Section" role="">
+                <div id="Text112" class="Widget Text" role=""><span>Our Partners</span></div>
+                <section id="Section49" class="Widget Section" role=""><img src="../../static/assets/64px-Google__G__Logo.svg2.png" id="Image4" class="Widget Image" role=""></img>
+                    <img src="../../static/assets/intel.png" id="Image5" class="Widget Image" role=""></img>
+                    <img src="../../static/assets/Cisco_logo.svg" id="Image6" class="Widget Image" role=""></img>
+                    <img src="../../static/assets/uottawa_hor_white.png" id="Image7" class="Widget Image" role=""></img>
+                </section>
+            </section>
+        </div>
+    </footer>
+
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Widget/js/Widget.js?v=1.0.24"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Header/js/Header.js?v=1.0.77-beta"></script>
+<script type="text/javascript" src="../../static/widgets/member2/Image/js/Image.js?v=1.0.34-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/NavigationItem/js/navigationItem.js?v=1.0.1"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Main/js/Main.js?v=1.0.4-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Container/js/Container.js?v=1.0.1"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Title/js/Title.js?v=1.0.110-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Section/js/Section.js?v=1.0.33-beta"></script>
+<script type="text/javascript" src="../../static/widgets/member2/Button/js/Button.js?v=1.0.146-beta"></script>
+<script type="text/javascript" src="../../static/widgets/member2/Footer/js/Footer.js?v=1.0.16-beta"></script>
+<script type="text/javascript" src="../../static/widgets/_global/Image/js/Image.js?v=1.0.42-beta"></script>
+
+</html>
