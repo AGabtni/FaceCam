@@ -3,12 +3,14 @@ chardet==3.0.4
 dj-database-url==0.5.0
 Django==2.1.7
 django-cleanup==3.2.0
-dlib==19.17.99
+dlib==19.17.0
+face-recognition==1.2.3
 docutils==0.14
 gunicorn==19.9.0
 idna==2.8
 numpy==1.16.2
 opencv-python==4.0.0.21
+psycopg2-binary==2.7.7
 Pillow==5.4.1
 PyQt5==5.11.3
 PyQt5-sip==4.19.13
