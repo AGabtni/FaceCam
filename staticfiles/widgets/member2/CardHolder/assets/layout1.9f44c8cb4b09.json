@@ -1,0 +1,125 @@
+{
+    "tag": "div",
+    "class": "Layout1",
+    "data": [
+        {
+            "tag": "div",
+            "class": "Filter Left",
+            "data": [
+                {
+                    "tag": "div",
+                    "class": "SearchContainer",
+                    "data": {
+                        "tag": "input",
+                        "id": "SearchBox",
+                        "placeholder": "%lbl_search$s",
+                        "autocomplete": "off",
+                        "spellcheck": "off",
+                        "type": "search"
+                    }
+                },
+                {
+                    "tag": "div",
+                    "id": "filterbar",
+                    "data": [
+                        {
+                            "tag": "div",
+                            "class": "SliderTitle",
+                            "data": [
+                                {
+                                    "tag": "button",
+                                    "onclick": "javascript:member2__CardHolder.onFilterBarClick()"
+                                },
+                                {
+                                    "tag": "span",
+                                    "data": "%lbl_filters$s"
+                                }
+                            ]
+                        },
+                        {
+                            "tag": "div",
+                            "class": "Filters",
+                            "data": [
+                                "%filters$s",
+                                {
+                                    "tag": "div",
+                                    "class": "button-group",
+                                    "data": [
+                                        {
+                                            "tag": "button",
+                                            "id": "ApplyButton",
+                                            "onclick": "javascript:member2__CardHolder.onApplyButtonClick()",
+                                            "class": "BtnPrimary Btn",
+                                            "data": "%btn_apply$s"
+                                        },
+                                        {
+                                            "tag": "button",
+                                            "id": "ResetButton",
+                                            "onclick": "javascript:member2__CardHolder.onResetButtonClick()",
+                                            "class": "BtnDanger Btn",
+                                            "data": "%btn_reset$s"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "tag": "div",
+            "data": [
+                {
+                    "tag": "div",
+                    "class": "FilterSelection",
+                    "data": ""
+                },
+                {
+                    "tag": "div",
+                    "class": "ShowFilters",
+                    "data": {
+                        "tag": "a",
+                        "id": "ShowFiltersButton",
+                        "class": "BtnPrimary Btn",
+                        "data": "Show Filters",
+                        "href": "javascript:member2__CardHolder.onFilterBarClick()"
+                    }
+                },
+                {
+                    "tag": "div",
+                    "class": "ArticlesContainer wrapper",
+                    "data": "%cards$s"
+                },
+                {
+                    "tag": "div",
+                    "id": "NoResultsMessage",
+                    "class": "no-results not-found",
+                    "data": [
+                        {
+                            "tag": "h1",
+                            "data": "%title_not_found$s"
+                        },
+                        {
+                            "tag": "p",
+                            "data": "%lbl_search_not_found$s"
+                        },
+                        {
+                            "tag": "div",
+                            "data": [
+                                {
+                                    "tag": "h5",
+                                    "data": "%title_popular_articles$s"
+                                },
+                                {
+                                    "tag": "div",
+                                    "id": "SearchTopHits"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

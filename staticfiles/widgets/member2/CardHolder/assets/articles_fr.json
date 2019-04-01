@@ -1,0 +1,524 @@
+{
+    "1": {
+        "id": "1",
+        "slug": "artificial-intelligence",
+        "title": "Intelligence artificielle",
+        "subtitle": "La simulation de la technologie et l'augmentation des capacit\u00e9s cognitives humaines",
+        "content": "Intelligence artificielle (IA) est le terme utilis\u00e9 pour d\u00e9crire un ensemble de technologies apparent\u00e9es qui sont con\u00e7ues pour simuler et am\u00e9liorer les capacit\u00e9s cognitives humaines telles que la reconnaissance des formes, le jugement, la vision ou l'ou\u00efe. Son \u00e9volution peut \u00eatre divis\u00e9e",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Artificial_Intelligence",
+        "date_published": "13-06-2018",
+        "author": "Brian Double",
+        "departments": [
+            "Agence des services frontaliers du Canada",
+            "Agence de la sant\u00e9 Canada",
+            "Services publics et Approvisionnement Canada",
+            "Statistics Canada",
+            "Transport Canada"
+        ],
+        "tasks": [
+            "Examiner de nouveaux outils"
+        ],
+        "focus": [
+            "Analysis",
+            "Concept"
+        ]
+    },
+    "2": {
+        "id": "2",
+        "slug": "behavioural-insights",
+        "title": "L'introspection comportementale",
+        "subtitle": "Inspirer la prise de bonnes decisions \u00e0 travers une compr\u00e9hension de leurs guides",
+        "content": "La plupart des gens veulent adopter un mode de vie plus sain, agir de fa\u00e7on responsable sur le plan financier et contribuer \u00e0 la cr\u00e9ation d\u2019une soci\u00e9t\u00e9 et d\u2019un environnement durables. Cependant, la plupart d\u2019entre nous vivons \u00e9galement des vies pleines d\u2019obstacles qui nous",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Behavioural_Insights",
+        "date_published": "16-02-2016",
+        "author": "Elizabeth Hardy",
+        "departments": [
+            "Emploi et D\u00e9veloppement social Canada",
+            "Bureau du Conseil priv\u00e9"
+        ],
+        "tasks": [
+            "Remettre en question ma r\u00e9flexion"
+        ],
+        "focus": [
+            "Analyse",
+            "R\u00e9sultats",
+            "Options"
+        ]
+    },
+    "3": {
+        "id": "3",
+        "slug": "big-data",
+        "title": "M\u00e9gadonn\u00e9es",
+        "subtitle": "Des endembles de donn\u00e9es larges et complexes, de plus en plus disponibles pour des analyses algorithmiques",
+        "content": "Les m\u00e9gadonn\u00e9es consistent g\u00e9n\u00e9ralement en des ensembles de donn\u00e9es si grands et si complexes que leur traitement dans des d\u00e9lais raisonnables au moyen des outils de gestion et d\u2019analyse des donn\u00e9es traditionnels pr\u00e9sente des difficult\u00e9s consid\u00e9rables",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Big_Data",
+        "date_published": "08-04-2016",
+        "author": "Jeremie Lebel, Nicholas Charney",
+        "departments": [
+            "Agence du revenu du Canada",
+            "Emploi et D\u00e9veloppement social Canada",
+            "Finances Canada",
+            "Sant\u00e9 Canada",
+            "Conseil national de recherches du Canada"
+        ],
+        "tasks": [
+            "Faire participater le public"
+        ],
+        "focus": [
+            "Donn\u00e9es probantes",
+            "Analyse",
+            "Mesure"
+        ]
+    },
+    "4": {
+        "id": "4",
+        "slug": "blockchain",
+        "title": "Cha\u00eene des blocs",
+        "subtitle": "Une technologie pour am\u00e9liorer des services, securiser des transactions et am\u00e9liorer la securit\u00e9 et la confiance",
+        "content": "[TRADUCTION] \u00ab En r\u00e9sum\u00e9, la cha\u00eene de blocs est une technologie \u201cemprunt\u00e9e\u201d \u00e0 la cryptomonnaie Bitcoin qui nous offre un registre de \u201ctransactions\u201d d\u00e9centralis\u00e9, v\u00e9rifiable et immuable. Ces transactions peuvent porter sur des devises \u00e9lectroniques, mais aussi sur des dossiers m\u00e9dicaux, des vaccins, des",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Blockchain",
+        "date_published": "13-06-2018",
+        "author": "Brian Double",
+        "departments": [
+            "Immigration, R\u00e9fugi\u00e9s et Citoyennet\u00e9 Canada",
+            "Conseil national de recherches du Canada",
+            "Ressources naturelles Canada",
+            "Banque du Canada"
+        ],
+        "tasks": [
+            "Examiner de nouveaux outils"
+        ],
+        "focus": [
+            "Prestation",
+            "Att\u00e9nuation des risques",
+            "Concept"
+        ]
+    },
+    "5": {
+        "id": "5",
+        "slug": "citizen-science",
+        "title": "Science citoyenne",
+        "subtitle": "La collection des donn\u00e9es ou l'analyse des projets effectu\u00e9s par les volontiers pour assister \u00e0 la recherche.",
+        "content": "La science citoyenne est une technique de recherche qui invite les citoyens de l\u2019endroit \u00e0 devenir des ressources afin de recueillir de l\u2019information pour les scientifiques dans le cadre d\u2019un grand projet de",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Citizen_Science",
+        "date_published": "08-04-2016",
+        "author": "Jessica MacIntosh,  Kendra O'Neill",
+        "departments": [
+            "P\u00eaches et Oc\u00e9ans Canada",
+            "Conseil national de recherches du Canada",
+            "Ressources naturelles Canada",
+            "Parcs Canada"
+        ],
+        "tasks": [
+            "Faire participater le public"
+        ],
+        "focus": [
+            "Donn\u00e9es probantes",
+            "Analyse",
+            "Mobilisation"
+        ]
+    },
+    "6": {
+        "id": "6",
+        "slug": "crowdsourcing",
+        "title": "L\u2019externalisation ouverte",
+        "subtitle": "Atteindre des services, id\u00e9es ou contenu necessaires d'un groupe large.",
+        "content": "L\u2019externalisation ouverte est la pratique consistant \u00e0 obtenir des services, des id\u00e9es, du contenu ou des donn\u00e9es n\u00e9cessaires en demandant des contributions \u00e0 un grand groupe de personnes (habituellement au moyen d\u2019une plateforme en ligne)",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Crowdsourcing",
+        "date_published": "10-02-2016",
+        "author": "Kevin Armstrong, Sarah Chan",
+        "departments": [
+            "Environnement et Changement climatique Canada",
+            "Biblioth\u00e8que et Archives Canada",
+            "Ressources naturelles Canada",
+            "Agence de la sant\u00e9 Canada"
+        ],
+        "tasks": [
+            "Faire participater le public",
+            "Remettre en question ma r\u00e9flexion"
+        ],
+        "focus": [
+            "Mobilisation",
+            "Options"
+        ]
+    },
+    "7": {
+        "id": "7",
+        "slug": "data-analytics",
+        "title": "L'analytique des donn\u00e9es",
+        "subtitle": "Considerer des donn\u00e9es structur\u00e9e et d\u00e9structur\u00e9es de plusieurs sources afin de gagn\u00e9s des id\u00e9es.",
+        "content": "\u00ab M\u00e9gadonn\u00e9es \u00bb est le terme employ\u00e9 pour d\u00e9crire la collecte, le stockage et le traitement d\u2019\u00e9normes quantit\u00e9s de donn\u00e9es. Les donn\u00e9es peuvent \u00eatre de sources internes (p. ex. syst\u00e8mes d\u2019achat ou de gestion de cas) et de sources externes",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Data_Analytics",
+        "date_published": "10-07-2016",
+        "author": "Gavin Jones",
+        "departments": [
+            "Agence du revenu du Canada",
+            "Emploi et D\u00e9veloppement social Canada",
+            "Finances Canada",
+            "Affaires mondiales Canada",
+            "Sant\u00e9 Canada",
+            "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada",
+            "Justice Canada",
+            "Conseil national de recherches du Canada"
+        ],
+        "tasks": [
+            "D\u00e9finir les r\u00e9sultats strat\u00e9giques",
+            "Comprendre mon probl\u00e8me ou ma situation",
+            "Poser des questions",
+            "Concevoir un nouveau programme"
+        ],
+        "focus": [
+            "Analyse",
+            "R\u00e9sultats"
+        ]
+    },
+    "8": {
+        "id": "8",
+        "slug": "design-thinking",
+        "title": "La pens\u00e9e design",
+        "subtitle": "Principles and practices focused on developing products\/service\/experiences focused on needs of users. ",
+        "content": "La pens\u00e9e design comprend un ensemble de principes, de pratiques et de processus servant \u00e0 l\u2019\u00e9laboration de produits, d\u2019exp\u00e9riences et de services selon les besoins de l\u2019usager. Cette approche a \u00e9t\u00e9 adapt\u00e9e afin d\u2019aider les gouvernements \u00e0 \u00e9laborer de meilleurs",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Design_Thinking",
+        "date_published": "09-02-2016",
+        "author": "Steven Leconte",
+        "departments": [
+            "Agence canadienne d'inspection des aliments",
+            "Sant\u00e9 Canada",
+            "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada",
+            "Justice Canada"
+        ],
+        "tasks": [
+            "D\u00e9finir les r\u00e9sultats strat\u00e9giques",
+            "Cr\u00e9er de nouveaux instruments",
+            "Remettre en question ma r\u00e9flexion",
+            "Comprendre mon probl\u00e8me ou ma situation",
+            "Examiner de nouveaux outils",
+            "Concevoir un nouveau programme"
+        ],
+        "focus": [
+            "Mobilisation",
+            "Processus de r\u00e9flexion",
+            "R\u00e9sultats",
+            "Options",
+            "Essais",
+            "Att\u00e9nuation des risques"
+        ]
+    },
+    "9": {
+        "id": "9",
+        "slug": "experimentation",
+        "title": "Exp\u00e9rimentation",
+        "subtitle": "L'esssai rigoureuse des id\u00e9es ou des approches pour mesurer le lien de cause \u00e0 effet des variables",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Experimentation",
+        "content": "L\u2019exp\u00e9rimentation implique l\u2019utilisation d\u2019une m\u00e9thode rigoureuse pour mettre \u00e0 l\u2019essai une id\u00e9e ou approche pour aider \u00e0 d\u00e9terminer ce qui fonctionne et ce qui ne fonctionne pas. En mettant \u00e0 l\u2019essai \u00e0 petite \u00e9chelle les interventions ou les services",
+        "date_published": "16-03-2017",
+        "author": "Sarah Chan, Dan Monafu",
+        "departments": [
+            "Emploi et D\u00e9veloppement social Canada",
+            "Ressources naturelles Canada",
+            "Agence de la sant\u00e9 Canada"
+        ],
+        "tasks": [
+            "Examiner de nouveaux outils",
+            "Poser des questions"
+        ],
+        "focus": [
+            "Donn\u00e9es probantes",
+            "R\u00e9sultats",
+            "Options",
+            "Prestation",
+            "Essais",
+            "Att\u00e9nuation des risques"
+        ]
+    },
+    "10": {
+        "id": "10",
+        "slug": "foresight",
+        "title": "Prospective",
+        "subtitle": "Imaginer syst\u00e9matiquement des futurs plausibles sur la base de donn\u00e9es et de tendances",
+        "content": "La prospective est une d\u00e9marche consistant \u00e0 anticiper et \u00e0 g\u00e9rer le changement. Des m\u00e9thodes prospectives sont utilis\u00e9es durant l\u2019\u00e9laboration de plans et de politiques strat\u00e9giques afin d\u2019imaginer de fa\u00e7on syst\u00e9matique diff\u00e9rentes possibilit\u00e9s",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/foresight",
+        "date_published": "8-4-2016",
+        "author": "Anthony Michel  Michael Brown",
+        "departments": [
+            "Service canadien du renseignement de s\u00e9curit\u00e9",
+            "Affaires mondiales Canada",
+            "Horizons de politiques Canada"
+        ],
+        "tasks": [
+            "Comprendre mon probl\u00e8me ou ma situation"
+        ],
+        "focus": [
+            "Processus de r\u00e9flexion"
+        ]
+    },
+    "11": {
+        "id": "11",
+        "slug": "gamification",
+        "title": "Ludification",
+        "subtitle": "Appliquer des \u00e9l\u00e9ments de jeu pour d\u00e9clencher des mentalit\u00e9s et des comportements souhait\u00e9s",
+        "content": "La ludification est l\u2019utilisation d\u2019\u00e9l\u00e9ments propres au jeu et de techniques de conception de jeux dans un contexte non ludique. En int\u00e9grant des \u00e9l\u00e9ments propres au jeu comme des points, des qu\u00eates, des avatars ou des niveaux dans des d\u00e9fis",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Gamification",
+        "date_published": "08-04-2016",
+        "author": "Amelie Veillette, Peter Massie",
+        "departments": [
+            "Ressources naturelles Canada",
+            "Aviation royale canadienne"
+        ],
+        "tasks": [
+            "Remettre en question ma r\u00e9flexion"
+        ],
+        "focus": [
+            "R\u00e9sultats",
+            "Options"
+        ]
+    },
+    "12": {
+        "id": "12",
+        "slug": "hackathon-appathon",
+        "title": "Marathons de programmation",
+        "subtitle": "Un \u00e9v\u00e9nement limit\u00e9 dans le temps o\u00f9 les \u00e9quipes \u00e9laborent des solutions sur un th\u00e8me pr\u00e9d\u00e9termin\u00e9.",
+        "content": "Un marathon de programmation est un \u00e9v\u00e9nement cr\u00e9atif intense (d\u2019une dur\u00e9e habituellement comprise entre 24 et 72 heures) au cours duquel les participants sont r\u00e9partis en \u00e9quipes qui r\u00e9alisent des solutions li\u00e9es \u00e0 un th\u00e8me pr\u00e9d\u00e9termin\u00e9",
+        "img": "hackathon-appathon.jpg",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Hackathon",
+        "date_published": "10-02-2016",
+        "author": "Jason Pearman",
+        "departments": [
+            "Affaires mondiales Canada"
+        ],
+        "tasks": [
+            "Faire participater le public",
+            "Examiner de nouveaux outils"
+        ],
+        "focus": [
+            "Processus de r\u00e9flexion",
+            "Options",
+            "Essais"
+        ]
+    },
+    "13": {
+        "id": "13",
+        "slug": "innovation-hubs-labs",
+        "title": "Centres et laboratoires",
+        "subtitle": "\u00c9quipes centr\u00e9es sur l'application de techniques pour recadrer les probl\u00e8mes, g\u00e9n\u00e9rer des solutions ou accro\u00eetre la capacit\u00e9 d'innovation",
+        "content": "Les centres et laboratoires d'innovation (\u00e9galement appel\u00e9s \u00e9quipes ou unit\u00e9s d'innovation) diff\u00e8rent des autres \u00e9quipes en ce qu\u2019ils adoptent souvent des m\u00e9thodes nouvelles et exp\u00e9rimentales pour s\u2019attaquer \u00e0 diff\u00e9rents enjeux sociaux ou publics.",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Innovation_hubs",
+        "date_published": "10-02-2016",
+        "author": "Dan Monafu",
+        "departments": [
+            "Agence du revenu du Canada",
+            "Emploi et D\u00e9veloppement social Canada",
+            "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada",
+            "Ressources naturelles Canada",
+            "Bureau du Conseil priv\u00e9",
+            "Services publics et Approvisionnement Canada"
+        ],
+        "tasks": [
+            "Remettre en question ma r\u00e9flexion"
+        ],
+        "focus": [
+            "Processus de r\u00e9flexion",
+            "Att\u00e9nuation des risques",
+            "Concept"
+        ]
+    },
+    "14": {
+        "id": "14",
+        "slug": "open-data",
+        "title": "Donn\u00e9es ouvertes",
+        "subtitle": "Donn\u00e9es structur\u00e9es, lisibles par machine, accessibles au public.",
+        "content": "Les donn\u00e9es ouvertes sont des donn\u00e9es structur\u00e9es, lisibles \u00e0 la machine, qui peuvent \u00eatre librement partag\u00e9es, utilis\u00e9es et mises \u00e0 profit par quiconque, sans restriction (ouvert.canada.ca). En tant qu\u2019\u00e9l\u00e9ment de base des connaissances ouvertes, les donn\u00e9es ouvertes",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Innovation_hubs",
+        "date_published": "10-02-2016",
+        "author": "Dan Monafu",
+        "departments": [
+            "Affaires mondiales Canada",
+            "Immigration, R\u00e9fugi\u00e9s et Citoyennet\u00e9 Canada",
+            "Ressources naturelles Canada",
+            "Secr\u00e9tariat du Conseil du Tr\u00e9sor du Canada"
+        ],
+        "tasks": [
+            "Cr\u00e9er de nouveaux instruments"
+        ],
+        "focus": [
+            "Mobilisation",
+            "R\u00e9sultats"
+        ]
+    },
+    "15": {
+        "id": "15",
+        "slug": "open-policy-making",
+        "title": "\u00c9laboration de politiques ouvertes",
+        "subtitle": "\u00c9laborer une politique gouvernementale avec des contributions directes de tiers",
+        "content": "Le processus d\u2019\u00e9laboration de politiques ouverte d\u00e9signe de fa\u00e7on g\u00e9n\u00e9rale le processus de cr\u00e9ation d\u2019une politique gouvernementale avec des contributions directes du public et d\u2019autres parties int\u00e9ress\u00e9es de l\u2019ext\u00e9rieur. Le processus est d\u00e9fini par la mentalit\u00e9, les proc\u00e9dures et les outils qui cr\u00e9ent un ",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Open_Policy_Making",
+        "date_published": "08-04-2016",
+        "author": "John Kenney, Kristofer Bergmann",
+        "departments": [
+            "Emploi et D\u00e9veloppement social Canada",
+            "Affaires mondiales Canada",
+            "Immigration, R\u00e9fugi\u00e9s et Citoyennet\u00e9 Canada",
+            "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada",
+            "Ressources naturelles Canada",
+            "Agence de la sant\u00e9 Canada",
+            "Secr\u00e9tariat du Conseil du Tr\u00e9sor du Canada"
+        ],
+        "tasks": [
+            "Faire participater le public"
+        ],
+        "focus": [
+            "Mobilisation",
+            "Options",
+            "Att\u00e9nuation des risques"
+        ]
+    },
+    "16": {
+        "id": "16",
+        "slug": "pay-for-performance",
+        "title": "Paiement selon le rendement",
+        "subtitle": "R\u00e9compenses financi\u00e8res pour atteindre les objectifs de r\u00e9sultat",
+        "content": "Le \u00ab paiement selon le rendement \u00bb d\u00e9signe un mode de financement selon lequel un organisme parrain r\u00e9compense financi\u00e8rement une organisation de prestation de services (ou des investisseurs priv\u00e9s dans le cas d\u2019une obligation \u00e0 impact social) apr\u00e8s l\u2019atteinte des r\u00e9sultats cibl\u00e9s convenus. Parfois, ce type de financement est appel\u00e9",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Pay_for_performance",
+        "date_published": "10-02-2016",
+        "author": "Francis Nolan-Poupart",
+        "departments": [
+            "Agriculture et Agroalimentaire Canada",
+            "Emploi et D\u00e9veloppement social Canada"
+        ],
+        "tasks": [
+            "D\u00e9finir les r\u00e9sultats strat\u00e9giques"
+        ],
+        "focus": [
+            "R\u00e9sultats",
+            "Prestation"
+        ]
+    },
+    "17": {
+        "id": "17",
+        "slug": "prizes-challenges",
+        "title": "D\u00e9fis des prix",
+        "subtitle": "Comp\u00e9titions pour inviter \u00e0 participer \u00e0 la r\u00e9solution de probl\u00e8mes particuliers.",
+        "content": "Les d\u00e9fis des prix sont une forme d\u2019externalisation ouverte qui fait appel \u00e0 des comp\u00e9titions dot\u00e9es de prix (p. ex., prix en argent, reconnaissance, acc\u00e8s, etc.) pour susciter une participation cibl\u00e9e ou g\u00e9n\u00e9rale \u00e0 la r\u00e9solution de probl\u00e8mes particuliers. Les d\u00e9fis des prix peuvent \u00eatre utilis\u00e9s dans un vaste \u00e9ventail de disciplines (p. ex., techniques, scientifiques, politiques) et",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Prizes",
+        "date_published": "10-02-2016",
+        "author": "Sarah Chan",
+        "departments": [
+            "Banque du Canada",
+            "\u00c9cole de la fonction publique du Canada",
+            "Finances Canada",
+            "Affaires mondiales Canada",
+            "Patrimoine canadien",
+            "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada",
+            "Agence de la sant\u00e9 Canada, Statistics Canada"
+        ],
+        "tasks": [
+            "Faire participater le public",
+            "Examiner de nouveaux outils"
+        ],
+        "focus": [
+            "R\u00e9sultats",
+            "Prestation"
+        ]
+    },
+    "18": {
+        "id": "18",
+        "slug": "public-service-mutuals",
+        "title": "Les mutuelles de services publics",
+        "subtitle": "Des organisations ext\u00e9rieures au gouvernement qui fournissent des services publics; ce sont des membres ou des employ\u00e9s contr\u00f4l\u00e9s.",
+        "content": "Le terme mutuelles de services publics (MSP), qu\u2019on peut \u00e9galement remplacer par le mot \u00ab mutuelles \u00bb, fait r\u00e9f\u00e9rence \u00e0 une panoplie d\u2019initiatives diff\u00e9rentes qui ont en commun la prestation (totale ou partielle) de services publics par l\u2019entremise d\u2019un mod\u00e8le de",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Public_Service_Mutuals",
+        "date_published": "10-12-2016",
+        "author": "Herbert de Graaf",
+        "departments": [],
+        "tasks": [
+            "Examiner de nouveaux outils"
+        ],
+        "focus": [
+            "Prestation"
+        ]
+    },
+    "19": {
+        "id": "19",
+        "slug": "serious-games",
+        "title": "Jeux s\u00e9rieux",
+        "subtitle": "Utiliser des exercices sur table ou des simulations pour tester des id\u00e9es et mettre en pratique des comp\u00e9tences",
+        "content": "Es jeux s\u00e9rieux, qui comprennent des comp\u00e9titions de cas, des simulations, des jeux de soci\u00e9t\u00e9, tels que le nouveau jeu \u00ab Impact \u00bb d\u2019Horizons de politiques, et bien d\u2019autres exemples encore, sont un excellent moyen d\u2019amener les gens \u00e0 apprendre et \u00e0 collaborer. Ces jeux sont dits \u00ab s\u00e9rieux \u00bb parce qu\u2019ils ne visent pas seulement \u00e0 amuser, mais aussi \u00e0 permettre aux utilisateurs",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Serious_Games",
+        "date_published": "08-04-2016",
+        "author": "Sarah Fraser",
+        "departments": [
+            "Ressources naturelles Canada",
+            "S\u00e9curit\u00e9 publique Canada"
+        ],
+        "tasks": [
+            "Examiner de nouveaux outils",
+            "Concevoir un nouveau programme"
+        ],
+        "focus": [
+            "Essais"
+        ]
+    },
+    "20": {
+        "id": "20",
+        "slug": "smart-regulation",
+        "title": "R\u00e9glementation intelligente",
+        "subtitle": "Solutions pr\u00e9ventives et int\u00e9gr\u00e9es pour mieux r\u00e9pondre aux d\u00e9fis sociaux complexes",
+        "content": "La r\u00e9glementation intelligente a pour but de donner confiance au public en l\u2019efficacit\u00e9 r\u00e9glementaire tout en limitant le fardeau des parties r\u00e9glement\u00e9es. La r\u00e9glementation intelligente favorise souvent l\u2019adoption d\u2019une \u00ab approche ascendante \u00bb \u00e0 la r\u00e9glementation qui offre aux entit\u00e9s r\u00e9glement\u00e9es",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Smart_Regulation",
+        "date_published": "08-04-2016",
+        "author": "Katherine Gosselin",
+        "departments": [
+            "Environnement et Changement climatique Canada",
+            "Transport Canada"
+        ],
+        "tasks": [
+            "Cr\u00e9er de nouveaux instruments"
+        ],
+        "focus": [
+            "R\u00e9sultats",
+            "Options",
+            "Mesure"
+        ]
+    },
+    "21": {
+        "id": "21",
+        "slug": "social-innovation",
+        "title": "Innovation sociale",
+        "subtitle": "Preventative and integrated solutions to better address complex social challenges",
+        "content": "ll existe plusieurs d\u00e9finitions de \u00ab l\u2019innovation sociale \u00bb, lesquelles font toutes r\u00e9f\u00e9rence de mani\u00e8re g\u00e9n\u00e9rale \u00e0 de nouvelles solutions pour relever plus efficacement les d\u00e9fis sociaux complexes, tels que l\u2019itin\u00e9rance chez les jeunes, le ch\u00f4mage de longue dur\u00e9e ou l\u2019isolement social des a\u00een\u00e9s. Parmi ces solutions, on trouve des programmes, des proc\u00e9d\u00e9s, des types d\u2019organismes, des produits, des m\u00e9thodes de financement, voire des principes",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Social_Innovation",
+        "date_published": "05-02-2016",
+        "author": "Francis Nolan-Poupart",
+        "departments": [
+            "Emploi et D\u00e9veloppement social Canada",
+            "Agence de la sant\u00e9 Canada"
+        ],
+        "tasks": [
+            "Examiner de nouveaux outils"
+        ],
+        "focus": [
+            "R\u00e9sultats",
+            "Options"
+        ]
+    },
+    "22": {
+        "id": "22",
+        "slug": "social-metrics",
+        "title": "Indicateurs sociaux",
+        "subtitle": "Mesures des r\u00e9sultats pour exprimer l'impact de la programmation",
+        "content": "Les indicateurs sociaux mesurent et articulent les r\u00e9sultats sociaux. Ils tendent \u00e0 d\u00e9crire des fa\u00e7ons de mesurer le changement que les personnes vivent \u00e0 la suite d\u2019une intervention particuli\u00e8re. Ils sont souvent utilis\u00e9s par les organisations pour articuler les retomb\u00e9es de leurs programmes.",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Social_Metrics",
+        "date_published": "17-03-2017",
+        "author": "Francis Nolan-Poupart",
+        "departments": [
+            "Emploi et D\u00e9veloppement social Canada"
+        ],
+        "tasks": [
+            "Comprendre mon probl\u00e8me ou ma situation"
+        ],
+        "focus": [
+            "Donn\u00e9es probantes",
+            "Mesure"
+        ]
+    }
+}

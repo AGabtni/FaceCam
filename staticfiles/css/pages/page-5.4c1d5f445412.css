@@ -1,0 +1,342 @@
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-Black-normal.c74920662f15.ttf") format('truetype');
+font-weight:900;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-Bold-normal.d1e7d01e2fa6.ttf") format('truetype');
+font-weight:700;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-ExtraBold-normal.ca3c9213b832.ttf") format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-ExtraLight-normal.f0bdf46d4204.ttf") format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-Light-normal.ce6ad045db1d.ttf") format('truetype');
+font-weight:300;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-Medium-normal.4644d6932852.ttf") format('truetype');
+font-weight:500;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-Regular-normal.825bd5483cbc.ttf") format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-SemiBold-normal.3d1d522af8b5.ttf") format('truetype');
+font-weight:400;
+font-style=normal;
+}
+@font-face {
+ font-family:'SairaCondensed';
+src:url("../../fonts/custom1/custom1-Thin-normal.5070ce62e9fe.ttf") format('truetype');
+font-weight:100;
+font-style=normal;
+}
+
+.member2__Image#member2__Image8 {
+float:left;
+background-color:rgba(0, 0, 0, 0);
+padding-right:5px;
+padding-left:10px;
+}
+.Text#Text36 {
+font-family:SairaCondensed;
+font-size:25px;
+color:rgb(255, 255, 255);
+padding-left:15px;
+padding-top:15px;
+}
+.NavigationItem#NavigationItem48 {
+color:rgb(255, 255, 255);
+}
+.NavigationItem#NavigationItem49 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+}
+.NavigationItem#NavigationItem50 {
+color:rgb(255, 255, 255);
+}
+.NavigationItem#NavigationItem51 {
+color:rgb(255, 255, 255);
+}
+.Navigation#Navigation17 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+padding-top:15px;
+padding-left:15px;
+}
+.NavigationItem#NavigationItem53 {
+margin-right:20px;
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+}
+.Navigation#Navigation18 {
+padding-top:15px;
+padding-left:15px;
+}
+.Navbar#Navbar8 {
+background-color:rgba(0, 0, 0, 0);
+height:64px;
+padding-left:0px;
+padding-right:0px;
+padding-top:0px;
+padding-bottom:0px;
+}
+.Header#Header8 {
+background-color:rgba(0, 0, 0, 0);
+background-image:url("../../assets/okta-bg-wave.009fa4ea1c3c.svg");
+background-repeat:no-repeat;
+background-size:cover;
+flex-direction:row !important;;
+}
+.Main#Main9 {
+height:100%;
+width:100%;
+padding-left:0px;
+padding-right:0px;
+}
+.Container#Container27 {
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-content:center;
+align-items:flex-start;
+background-repeat:no-repeat;
+background-size:cover;
+margin-top:20px;
+margin-bottom:20px;
+}
+.Title#Title26 {
+font-family:SairaCondensed;
+font-size:56px;
+color:rgb(0, 0, 0);
+font-weight:500;
+text-align:left;
+vertical-align:middle;
+margin-bottom:25px;
+}
+.Text#Text44 {
+margin-bottom:15px;
+}
+.Text#Text45 {
+margin-bottom:15px;
+}
+.Text#Text46 {
+margin-bottom:15px;
+}
+.Text#Text47 {
+margin-bottom:15px;
+}
+.Text#Text48 {
+margin-bottom:15px;
+}
+.Text#Text49 {
+margin-bottom:15px;
+}
+.Section#Section41 {
+width:100%;
+flex-direction:column !important;
+justify-content:flex-center !important;
+padding-left:0px;
+padding-right:0px;
+padding-top:0px;
+padding-bottom:0px;
+margin-bottom:20px;
+}
+.Image#Image47 {
+height:32px;
+width:32px;
+}
+.Text#Text50 {
+color:rgb(0, 0, 0);
+font-size:48px;
+font-family:SairaCondensed;
+margin-left:10px;
+}
+.Section#Section42 {
+padding-left:0px;
+padding-right:0px;
+padding-bottom:0px;
+padding-top:0px;
+justify-content:flex-start;
+align-items:center;
+display:flex;
+flex-direction:row;
+align-content:center;
+}
+.Image#Image48 {
+height:32px;
+width:32px;
+margin-right:5px;
+}
+.Text#Text51 {
+color:rgb(0, 0, 0);
+font-family:SairaCondensed;
+}
+.Section#Section44 {
+padding-left:0px;
+padding-right:0px;
+-webkit-box-pack:start !important;
+justify-content:flex-start !important;
+}
+.Image#Image49 {
+height:32px;
+width:32px;
+margin-right:5px;
+}
+.Text#Text52 {
+color:rgb(0, 0, 0);
+font-family:SairaCondensed;
+}
+.Section#Section45 {
+padding-left:0px;
+padding-right:0px;
+}
+.Image#Image50 {
+height:32px;
+width:32px;
+margin-right:5px;
+}
+.Text#Text53 {
+color:rgb(0, 0, 0);
+font-family:SairaCondensed;
+}
+.Section#Section46 {
+padding-left:0px;
+padding-right:0px;
+}
+.Section#Section43 {
+flex-direction:column !important;
+padding-left:0px;
+padding-top:0px;
+padding-bottom:0px;
+padding-right:0px;
+}
+.Section#Section40 {
+flex-direction:column !important;
+margin-right:100px;
+background-color:rgba(217, 217, 217, 0.4);
+border-radius:5px;
+width:40%;
+}
+.Title#Title27 {
+color:rgb(0, 0, 0);
+font-size:56px;
+font-family:SairaCondensed;
+font-weight:500;
+}
+.Image#Image51 {
+width:180px;
+height:180px;
+border-color:rgba(128, 128, 128, 0.36);
+border-radius:8px;
+border-style:solid;
+border-width:1px;
+}
+.Section#Section48 {
+padding-left:0px;
+padding-top:0px;
+padding-bottom:0px;
+padding-right:0px;
+margin-bottom:25px;
+-webkit-box-pack:start !important;
+justify-content:flex-start !important;
+}
+.Text#Text59 {
+color:rgb(0, 0, 0);
+font-family:SairaCondensed;
+font-size:20px;
+}
+.Section#Section49 {
+padding-left:0px;
+padding-right:0px;
+padding-top:0px;
+padding-bottom:0px;
+flex-direction:column !important;
+color:rgb(0, 0, 0);
+font-size:20px;
+font-family:SairaCondensed;
+}
+.Section#Section47 {
+width:40%;
+height:100%;
+flex-direction:column !important;
+background-color:rgba(217, 217, 217, 0.35);
+border-radius:5px;
+}
+.member2__Footer#member2__Footer7 {
+flex-direction:row;;
+justify-content:flex-end !important;
+align-items:flex-end!important;
+position:sticky;
+}
+.Container#Container26 {
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+align-content:center;
+width:100%;
+background-color:rgb(112, 157, 199);
+background-image:url("../../assets/okta-bg-wave2.009fa4ea1c3c.svg");
+background-repeat:no-repeat;
+background-size:cover;
+}
+.Text#Text43 {
+color:rgb(255, 255, 255);
+font-family:SairaCondensed;
+font-size:24px;
+}
+.Image#Image43 {
+height:32px;
+width:32px;
+}
+.Image#Image44 {
+width:32px;
+height:32px;
+}
+.Image#Image45 {
+height:32px;
+}
+.Image#Image46 {
+width:121px;
+height:43px;
+}
+.Section#Section39 {
+display:flex;
+flex-direction:row !important;
+justify-content:space-between !important;
+align-items:center !important;
+width:50%;
+}
+.Section#Section38 {
+width:100%;
+-webkit-box-pack:center !important;
+justify-content:flex-center !important;
+-webkit-box-align:center !important;
+align-items:center !important;
+flex-direction:column !important;
+-webkit-box-orient:horizontal !important;
+-webkit-box-direction:normal !important;
+}
+#Container27.Container{background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}

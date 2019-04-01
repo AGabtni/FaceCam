@@ -1,0 +1,123 @@
+{
+    "tag": "div",
+    "class": "Layout2",
+    "data": [
+        {
+            "tag": "div",
+            "class": "Filter Top",
+            "data": [
+                {
+                    "tag": "nav",
+                    "role": "navigation",
+                    "class": "NavUtil",
+                    "data": {
+                        "tag": "ul",
+                        "class": "wrapper",
+                        "data": [
+                            {
+                                "tag": "li",
+                                "role": "listitem",
+                                "class": "nav-util-filterbar",
+                                "data": {
+                                    "tag": "a",
+                                    "href": "javascript:member2__CardHolder.onFilterBarClick()",
+                                    "aria-controls": "filterbar",
+                                    "id": "toggle-filterbar",
+                                    "value": "%lbl_filters$s"
+                                }
+                            },
+                            {
+                                "tag": "li",
+                                "class": "nav-util-search",
+                                "data": {
+                                    "tag": "input",
+                                    "id": "SearchBox",
+                                    "autocomplete": "off",
+                                    "spellcheck": "off",
+                                    "type": "search",
+                                    "placeholder": "%lbl_search$s"
+                                },
+                                "role": "listitem"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "tag": "div",
+                    "class": "FilterSelection"
+                },
+                {
+                    "tag": "aside",
+                    "id": "filterbar",
+                    "class": "is-closed",
+                    "data": [
+                        {
+                            "tag": "div",
+                            "class": "content wrapper",
+                            "data": [
+                                {
+                                    "tag": "div",
+                                    "class": "Filters",
+                                    "data": "%filters$s"
+                                },
+                                {
+                                    "tag": "div",
+                                    "class": "button-group",
+                                    "data": [
+                                        {
+                                            "tag": "button",
+                                            "id": "ApplyButton",
+                                            "onclick": "javascript:member2__CardHolder.onApplyButtonClick()",
+                                            "class": "BtnPrimary Btn",
+                                            "data": "%btn_apply$s"
+                                        },
+                                        {
+                                            "tag": "button",
+                                            "id": "ResetButton",
+                                            "onclick": "javascript:member2__CardHolder.onResetButtonClick()",
+                                            "class": "BtnDanger Btn",
+                                            "data": "%btn_reset$s"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "tag": "div",
+            "class": "ArticlesContainer wrapper",
+            "data": "%cards$s"
+        },
+        {
+            "tag": "div",
+            "id": "NoResultsMessage",
+            "class": "no-results not-found",
+            "data": [
+                {
+                    "tag": "h1",
+                    "data": "%title_not_found$s"
+                },
+                {
+                    "tag": "p",
+                    "data": "%lbl_search_not_found$s"
+                },
+                {
+                    "tag": "div",
+                    "data": [
+                        {
+                            "tag": "h5",
+                            "data": "%title_popular_articles$s"
+                        },
+                        {
+                            "tag": "div",
+                            "id": "SearchTopHits"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

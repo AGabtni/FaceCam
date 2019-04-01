@@ -1,0 +1,14 @@
+{
+    "tasks": {
+        "type": "checkbox",
+        "multiselect": true
+    },
+    "departments": {
+        "type": "checkbox",
+        "multiselect": true
+    },
+    "focus": {
+        "type": "checkbox",
+        "multiselect": true
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "children": {
+        "Page": {
+            "rate": 1,
+            "publishedTime": 0
+        },
+        "Layout1": {
+            "rate": 1,
+            "publishedTime": 1538427444
+        },
+        "member2__AuroraPage": {
+            "rate": 1,
+            "publishedTime": 1545062430
+        }
+    },
+    "publicTimestamp": "1530735822",
+    "privateTimestamp": 1547839681
+}

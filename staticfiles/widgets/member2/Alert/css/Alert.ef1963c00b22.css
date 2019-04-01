@@ -1,0 +1,18 @@
+.member2__Alert {
+  padding: 12px;
+  margin-bottom: 5px;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  border-width: 1px;
+  border-radius: 0;
+  border-style: solid;
+}
+.member2__Alert .close {
+  color: inherit;
+}
+.member2__Alert .close:hover {
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+}

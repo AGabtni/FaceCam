@@ -1,0 +1,140 @@
+{
+    "Navbar": {
+        "path": "_global\/Navbar"
+    },
+    "Navigation": {
+        "path": "_global\/Navigation"
+    },
+    "NavigationItem": {
+        "path": "_global\/NavigationItem"
+    },
+    "Page": {
+        "path": "_global\/Page"
+    },
+    "Text": {
+        "path": "_global\/Text"
+    },
+    "member2__Header": {
+        "path": "member2\/Header"
+    },
+    "member2__Image": {
+        "path": "member2\/Image"
+    },
+    "member2__Button": {
+        "path": "member2\/Button"
+    },
+    "member2__Main": {
+        "path": "member2\/Main"
+    },
+    "member2__Title": {
+        "path": "member2\/Title"
+    },
+    "member2__Section": {
+        "path": "member2\/Section"
+    },
+    "member2__Container": {
+        "path": "member2\/Container"
+    },
+    "member2__ListItem": {
+        "path": "member2\/ListItem"
+    },
+    "member2__NavigationBar": {
+        "path": "member2\/NavigationBar"
+    },
+    "Header": {
+        "path": "_global\/Header"
+    },
+    "Main": {
+        "path": "_global\/Main"
+    },
+    "member2__Footer": {
+        "path": "member2\/Footer"
+    },
+    "DropdownItem": {
+        "path": "_global\/DropdownItem"
+    },
+    "DropdownDivider": {
+        "path": "_global\/DropdownDivider"
+    },
+    "Container": {
+        "path": "_global\/Container"
+    },
+    "Section": {
+        "path": "_global\/Section"
+    },
+    "Title": {
+        "path": "_global\/Title"
+    },
+    "Form": {
+        "path": "_global\/Form"
+    },
+    "TextualInput": {
+        "path": "_global\/TextualInput"
+    },
+    "Checkbox": {
+        "path": "_global\/Checkbox"
+    },
+    "ListGroup": {
+        "path": "_global\/ListGroup"
+    },
+    "ListItem": {
+        "path": "_global\/ListItem"
+    },
+    "member2__SVG": {
+        "path": "member2\/SVG"
+    },
+    "Image": {
+        "path": "_global\/Image"
+    },
+    "Layout1": {
+        "path": "_global\/Layout1"
+    },
+    "HTML5Video": {
+        "path": "_global\/HTML5Video"
+    },
+    "VideoPanel": {
+        "path": "_global\/VideoPanel"
+    },
+    "VideoPanelItem": {
+        "path": "_global\/VideoPanelItem"
+    },
+    "member2__Alert": {
+        "path": "member2\/Alert"
+    },
+    "member2__Badge": {
+        "path": "member2\/Badge"
+    },
+    "member2__ButtonGroup": {
+        "path": "member2\/ButtonGroup"
+    },
+    "member2__ListGroup": {
+        "path": "member2\/ListGroup"
+    },
+    "Widget": {
+        "path": "_global\/Widget"
+    },
+    "Iframe": {
+        "path": "_global\/Iframe"
+    },
+    "member2__AuroraPage": {
+        "path": "member2\/AuroraPage"
+    },
+    "member2__BootstrapCard": {
+        "path": "member2\/BootstrapCard"
+    },
+    "member2__CardHolder": {
+        "path": "member2\/CardHolder"
+    },
+    "Button": {
+        "path": "_global\/Button"
+    },
+    "member2__BootstrapSearchBar": {
+        "path": "member2\/BootstrapSearchBar"
+    },
+    "member2__AuroraSearchBar": {
+        "path": "member2\/AuroraSearchBar"
+    },
+    "Link": {
+        "path": "_global\/Link"
+    }
+}
