@@ -1,0 +1,60 @@
+{
+    "tag": "article",
+    "id": "%id$s",
+    "data": [
+        {
+            "tag": "header",
+            "data": {
+                "tag": "a",
+                "href": "%articleUrl$s",
+                "class": "entry-link",
+                "title": "%title$s",
+                "rel": "bookmark",
+                "data": {
+                    "tag": "figure",
+                    "data": [
+                        {
+                            "tag": "img",
+                            "src": "%imgUrl$s"
+                        },
+                        {
+                            "tag": "figcaption",
+                            "data": "%title$s"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "tag": "div",
+            "class": "ArticleMeta",
+            "data": [
+                {
+                    "tag": "span",
+                    "class": "vcard",
+                    "data": "%author$s"
+                },
+                {
+                    "tag": "time",
+                    "data": "%date_published$s"
+                }
+            ]
+        },
+        {
+            "tag": "div",
+            "class": "ArticleBody",
+            "data": [
+                {
+                    "tag": "div",
+                    "class": "ArticleContent",
+                    "data": "%content$s"
+                },
+                {
+                    "tag": "a",
+                    "href": "%articleUrl$s",
+                    "value": "Read More"
+                }
+            ]
+        }
+    ]
+}

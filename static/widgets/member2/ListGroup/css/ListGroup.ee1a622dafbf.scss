@@ -1,0 +1,11 @@
+ .member2__ListGroup {
+     &.arrow-right {
+         li  {
+           &::before {
+                padding-right: 5px;
+                padding-left: 5px;
+  				content: url('../assets/glyphicons-halflings-92-arrow-right.png');
+			}
+         }
+     }
+ }

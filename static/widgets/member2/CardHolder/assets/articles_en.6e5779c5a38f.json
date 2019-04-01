@@ -1,0 +1,525 @@
+{
+    "1": {
+        "id": "1",
+        "slug": "artificial-intelligence",
+        "title": "Artificial Intelligence",
+        "subtitle": "Technology simulating and enhancing human cognitive capabilities",
+        "content": "Artificial intelligence (AI) is a term used to describe a suite of related technologies intended to simulate and enhance human cognitive capabilities, such as pattern recognition, judgment, vision, or hearing. Its evolution can be divided into three stages: AI, as it currently exists (weak AI), can be",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Artificial_Intelligence",
+        "date_published": "13-06-2018",
+        "author": "Brian Double",
+        "departments": [
+            "Transport Canada",
+            "Canada Border Service Agency",
+            "Public Service and Procurement Canada",
+            "Statistics Canada",
+            "Public Health Agency of Canada"
+        ],
+        "tasks": [
+            "Explore new instruments"
+        ],
+        "focus": [
+            "Analysis",
+            "Concept"
+        ]
+    },
+    "2": {
+        "id": "2",
+        "slug": "behavioural-insights",
+        "title": "Behavioural Insights",
+        "subtitle": "Stimulating peoples' desire to make good choices by understanding their motivators",
+        "content": "Most people want to make healthier life decisions, be financially responsible and contribute to a sustainable society and environment. However, most of us also have lives full of obstructions to making the decisions that uphold these goals. Behavioural insights (BI) uses techniques from behavioural economics",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Behavioural_Insights",
+        "date_published": "16-02-2016",
+        "author": "Elizabeth Hardy",
+        "departments": [
+            "Privy Council Office",
+            "Employment and Social Development Canada"
+        ],
+        "tasks": [
+            "Challenge my thinking"
+        ],
+        "focus": [
+            "Analysis",
+            "Outcomes",
+            "Options"
+        ]
+    },
+    "3": {
+        "id": "3",
+        "slug": "big-data",
+        "title": "Big Data",
+        "subtitle": "Large and complex data sets increasingly available for algorithmic analysis ",
+        "content": "Big data generally refers to datasets so large and complex they create significant challenges for traditional data management and analysis tools in practical timeframes. Often it refers to the use of predictive analytics or other advanced methods to extract value from data. These datasets exist because of the ever",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Big_Data",
+        "date_published": "08-04-2016",
+        "author": "Jeremie Lebel, Nicholas Charney",
+        "departments": [
+            "Employment and Social Development Canada",
+            "Canada Revenue Agency",
+            "Health Canada",
+            "National Research Council",
+            "Finance Canada"
+        ],
+        "tasks": [
+            "Engage the public"
+        ],
+        "focus": [
+            "Evidence",
+            "Analysis",
+            "Measurement"
+        ]
+    },
+    "4": {
+        "id": "4",
+        "slug": "blockchain",
+        "title": "Blockchain",
+        "subtitle": "A technology to improve services, secure transactions and enhance security and trust",
+        "content": "Blockchain[1] \u201cIn a nutshell, blockchain is a technology \u2018borrowed\u2019 from the cryptocurrency Bitcoin and provides us with a decentralized, verifiable and immutable ledger of \u2018transactions\u2019. Those transactions could be electronic currencies but could also be health records, immunizations, international aid relief vouchers",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Blockchain",
+        "date_published": "13-06-2018",
+        "author": "Brian Double",
+        "departments": [
+            "Immigration, Refugee, and Citizenship Canada",
+            "National Research Council",
+            "Natural Resources Canada",
+            "Bank of Canada"
+        ],
+        "tasks": [
+            "Explore new instruments"
+        ],
+        "focus": [
+            "Delivery",
+            "De-risking",
+            "Concept"
+        ]
+    },
+    "5": {
+        "id": "5",
+        "slug": "citizen-science",
+        "title": "Citizen Science",
+        "subtitle": "Data collection or analysis projects done by volunteers to aid research",
+        "content": "Citizen science is a research technique that utilizes local citizens as resources to gather information for scientists in a large research project. Citizen Scientists do not necessarily have any scientific background, but they volunteer their time to observe, record and report data for scientists. Typically, volunteers",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Citizen_Science",
+        "date_published": "08-04-2016",
+        "author": "Jessica MacIntosh,  Kendra O'Neill",
+        "departments": [
+            "Fisheries and Oceans",
+            "National Research Council",
+            "Natural Resources Canada",
+            "Parks Canada"
+        ],
+        "tasks": [
+            "Engage the public"
+        ],
+        "focus": [
+            "Evidence",
+            "Analysis",
+            "Engagement"
+        ]
+    },
+    "6": {
+        "id": "6",
+        "slug": "crowdsourcing",
+        "title": "Crowdsourcing",
+        "subtitle": "Getting needed services, ideas or content from a large group",
+        "content": "Crowdsourcing is the practice of obtaining needed services, ideas, content or data by soliciting contributions from a large group of people, typically via an online platform, rather than from traditional employees or suppliers (Merriam-Webster). Crowdsourcing goes beyond traditional surveys, citizen engagement, and the",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Crowdsourcing",
+        "date_published": "10-02-2016",
+        "author": "Kevin Armstrong, Sarah Chan",
+        "departments": [
+            "Public Health Agency of Canada",
+            "Natural Resources Canada",
+            "Library and Archives Canada",
+            "Environment and Climate Change Canada"
+        ],
+        "tasks": [
+            "Engage the public",
+            "Challenge my thinking"
+        ],
+        "focus": [
+            "Engagement",
+            "Options"
+        ]
+    },
+    "7": {
+        "id": "7",
+        "slug": "data-analytics",
+        "title": "Data Analytics",
+        "subtitle": "Consider structured and unstructured data from many sources to gain insights",
+        "content": "Big Data is a term used to describe the collection, storing and processing of huge volumes of data. These data sources come from internal data sources such as purchasing or case management systems and external data sources from citizens, suppliers, partners and social networks to name a few. Using complex algorithms, the structured and unstructured",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Data_Analytics",
+        "date_published": "10-07-2016",
+        "author": "Gavin Jones",
+        "departments": [
+            "Global Affairs Canada",
+            "Employment and Social Development Canada",
+            "Canada Revenue Agency",
+            "Health Canada",
+            "National Research Council",
+            "Justice Canada, Innovation",
+            "Science and Economic Develpment",
+            "Finance Canada"
+        ],
+        "tasks": [
+            "Define policy outcomes",
+            "Understand my problem or issue",
+            "Ask questions",
+            "Design a new program"
+        ],
+        "focus": [
+            "Analysis",
+            "Outcomes"
+        ]
+    },
+    "8": {
+        "id": "8",
+        "slug": "design-thinking",
+        "title": "Design Thinking",
+        "subtitle": "Principles and practices focused on developing products\/service\/experiences focused on needs of users. ",
+        "content": "Design thinking is a set of principles, practices and processes that are used in developing products, experiences and services based on the needs of the user. Design thinking has been repurposed to help governments develop better policies, programs, and services centered on users\u2019 needs, by having a",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Design_Thinking",
+        "date_published": "09-02-2016",
+        "author": "Steven Leconte",
+        "departments": [
+            "Health Canada",
+            "Justice Canada",
+            "Innovation, Science and Economic Develpment",
+            "Canada Food Inspection Agency"
+        ],
+        "tasks": [
+            "Define policy outcomes",
+            "Generate new instruments",
+            "Challenge my thinking",
+            "Understand my problem or issue",
+            "Explore new instruments",
+            "Design a new program"
+        ],
+        "focus": [
+            "Engagement",
+            "Thinking process",
+            "Outcomes",
+            "Options",
+            "Testing",
+            "De-risking"
+        ]
+    },
+    "9": {
+        "id": "9",
+        "slug": "experimentation",
+        "title": "Experimentation",
+        "subtitle": "Rigorous testing of ideas or approaches to measure cause-and-effect of variables",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Experimentation",
+        "content": "Experimentation entails using a rigorous method to test an idea or an approach to help identify what does and doesn\u2019t work. By testing policy and program interventions or services at a small-scale, governments can generate evidence to learn what works and then make decisions on implementing larger se",
+        "date_published": "16-03-2017",
+        "author": "Sarah Chan, Dan Monafu",
+        "departments": [
+            "Public Health Agency of Canada",
+            "Employment and Social Development Canada",
+            "Natural Resources Canada"
+        ],
+        "tasks": [
+            "Generate new instruments",
+            "Ask questions"
+        ],
+        "focus": [
+            "Evidence",
+            "Outcomes",
+            "Options",
+            "Delivery",
+            "Testing",
+            "De-risking"
+        ]
+    },
+    "10": {
+        "id": "10",
+        "slug": "foresight",
+        "title": "Foresight",
+        "subtitle": "Systematically imagine plausible futures based on data and trends.",
+        "content": "Foresight is a process of anticipating and managing change. Foresight methods are used for strategic policy and planning to systematically imagine plausible futures based on current data, trends and policies. The most common foresight approach is scenario planning. Scenarios are credible, challenging stories",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/foresight",
+        "date_published": "8-4-2016",
+        "author": "Anthony Michel  Michael Brown",
+        "departments": [
+            "Policy Horizons",
+            "Global Affairs Canada",
+            "Canadian Security Intelligence Service"
+        ],
+        "tasks": [
+            "Understand my problem or issue"
+        ],
+        "focus": [
+            "Thinking process"
+        ]
+    },
+    "11": {
+        "id": "11",
+        "slug": "gamification",
+        "title": "Gamification",
+        "subtitle": "Applying game elements to trigger challenge mindsets and desired behaviours",
+        "content": "Gamification is the use of game elements and game design techniques in non-game contexts. By incorporating game elements such as points, quests, avatars, or levels to real life challenges, organizations may create incentives that change in behaviour and stimulate innovation by supporting engagement and",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Gamification",
+        "date_published": "08-04-2016",
+        "author": "Amelie Veillette, Peter Massie",
+        "departments": [
+            "Natural Resources Canada",
+            "Canadian Airforce"
+        ],
+        "tasks": [
+            "Challenge my thinking"
+        ],
+        "focus": [
+            "Outcomes",
+            "Options",
+            "Testing"
+        ]
+    },
+    "12": {
+        "id": "12",
+        "slug": "hackathon-appathon",
+        "title": "Hackathon\/Appathon",
+        "subtitle": "A time limited event where teams build solutions on a predetermined theme.",
+        "content": "A hackathon is an intense (usually 24-72 hours long) and creative event during which participants are put into teams that build solutions related to a predetermined theme. Traditionally hackathons (and their cousins Appathons, Codefests, and Pitch Camps) result in new apps, software programs, or prog",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Hackathon",
+        "date_published": "10-02-2016",
+        "author": "Jason Pearman",
+        "departments": [
+            "Global Affairs Canada"
+        ],
+        "tasks": [
+            "Engage the public",
+            "Explore new instruments"
+        ],
+        "focus": [
+            "Outcomes",
+            "Options",
+            "Testing"
+        ]
+    },
+    "13": {
+        "id": "13",
+        "slug": "innovation-hubs-labs",
+        "title": "Innovation Hubs\/Labs",
+        "subtitle": "Teams focused on applying techniques to reframe problems, generate solutions or grow innovation capacity",
+        "content": "Innovation Hubs\/Labs (also known as innovation teams, labs, units) are differentiated from other teams in that they often adopt new and experimental methods to tackle various social and public issues. They come in a variety of sizes, use a range of techniques, and are equipped with different resource",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Innovation_hubs",
+        "date_published": "10-02-2016",
+        "author": "Dan Monafu",
+        "departments": [
+            "Public Service and Procurement Canada",
+            "Privy Council Office",
+            "Employment and Social Development Canada",
+            "Canada Revenue Agency",
+            "Natural Resources Canada",
+            "Innovation, Science and Economic Development"
+        ],
+        "tasks": [
+            "Challenge my thinking"
+        ],
+        "focus": [
+            "Thinking process",
+            "De-risking",
+            "Concept"
+        ]
+    },
+    "14": {
+        "id": "14",
+        "slug": "open-data",
+        "title": "Open Data",
+        "subtitle": "Teams focused on applying techniques to reframe problems, generate solutions or grow innovation capacity",
+        "content": "Open data is data that is structured and machine-readable, freely shared, used and built on without restrictions (open.canada.ca). As a building block of open knowledge, open data promotes a robust and accessible commons, and interoperability is maximized by allowing for efficient combination or \u201ccrosstalk",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Innovation_hubs",
+        "date_published": "10-02-2016",
+        "author": "Dan Monafu",
+        "departments": [
+            "Global Affairs Canada",
+            "Immigration, Refugee, and Citizenship Canada",
+            "Treasury Board Secretariat",
+            "Natural Resources Canada"
+        ],
+        "tasks": [
+            "Challenge my thinking"
+        ],
+        "focus": [
+            "Thinking process",
+            "De-risking",
+            "Concept"
+        ]
+    },
+    "15": {
+        "id": "15",
+        "slug": "open-policy-making",
+        "title": "Open Policy Making",
+        "subtitle": "Creating government policy with direct contributions from external parties",
+        "content": "Open Policy Making refers broadly to the process of creating government policy with direct contributions from the public and other external parties. It includes the mindset, process and tools that create an \u201copen by default\u201d environment for governments to engage with citizens and other stakeholders in the",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Open_Policy_Making",
+        "date_published": "08-04-2016",
+        "author": "John Kenney, Kristofer Bergmann",
+        "departments": [
+            "Global Affairs Canada",
+            "Immigration, Refugee, and Citizenship Canada",
+            "Public Health Agency of Canada, Treasury Board Secretariat",
+            "Employment and Social Development Canada",
+            "Natural Resources Canada",
+            "Innovation, Science and Economic Develpment"
+        ],
+        "tasks": [
+            "Engage the public",
+            "Challenge my thinking"
+        ],
+        "focus": [
+            "Engagement",
+            "Options",
+            "De-risking"
+        ]
+    },
+    "16": {
+        "id": "16",
+        "slug": "pay-for-performance",
+        "title": "Pay for Performance",
+        "subtitle": "Financial rewards for achieving outcome targets",
+        "content": "Pay-for-performance (PFP) refers to funding arrangements where a commissioning organization financially rewards service delivery organizations (or private investors in the case of a social impact bond) for achieving agreed upon outcome targets. PFP is sometimes referred to as Pay-for-Success (PFS)",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Pay_for_performance",
+        "date_published": "10-02-2016",
+        "author": "Francis Nolan-Poupart",
+        "departments": [
+            "Employment and Social Development Canada",
+            "Agriculture and Agri-food Canada"
+        ],
+        "tasks": [
+            "Define policy outcomes"
+        ],
+        "focus": [
+            "Outcomes",
+            "Delivery"
+        ]
+    },
+    "17": {
+        "id": 17,
+        "slug": "prizes-challenges",
+        "title": "Prizes\/Challenges",
+        "subtitle": "Competitions to invite participation in solving particular problems.",
+        "content": "Prize challenges are a form of crowdsourcing that use competitions with prizes (e.g. monetary, recognition, access, etc.) to incent broad or targeted participation in helping to solve particular problems. Prize challenges can be used in a broad range of disciplines (e.g. technical, scientific, policy",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Prizes",
+        "date_published": "10-02-2016",
+        "author": "Sarah Chan",
+        "departments": [
+            "Global Affairs Canada",
+            "Statistics Canada",
+            "Public Health Agency of Canada",
+            "Bank of Canada",
+            "Innovation, Science and Economic Develpment",
+            "Heritage Canada",
+            "Canada School of Public Service, Finance Canada"
+        ],
+        "tasks": [
+            "Engage the public",
+            "Explore new instruments"
+        ],
+        "focus": [
+            "Outcomes",
+            "Delivery"
+        ]
+    },
+    "18": {
+        "id": "18",
+        "slug": "public-service-mutuals",
+        "title": "Public Service Mutuals",
+        "subtitle": "Organizations outside of government that deliver public services; these are member or employee controlled.",
+        "content": "The 'public service mutual' (PSM) or mutual is shorthand for a variety of initiatives, based on mutual or cooperative governance that in whole or in part delivers public services and in which employee or member control plays a significant role in their operation. Well-designed mutualization can trans",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Public_Service_Mutuals",
+        "date_published": "10-12-2016",
+        "author": "Herbert de Graaf",
+        "departments": [],
+        "tasks": [
+            "Explore new instruments"
+        ],
+        "focus": [
+            "Delivery"
+        ]
+    },
+    "19": {
+        "id": "19",
+        "slug": "serious-games",
+        "title": "Serious Games",
+        "subtitle": "Use tabletop exercises or simulations to test ideas and practice skills",
+        "content": "Serious games, which include case competitions, simulations, board games like Policy Horizon\u2019s game \u201cImpact\u201d and many other examples, are a great way to get people to learn and collaborate. The \u2018serious\u2019 in the title signals that these games aren\u2019t just for fun, but provide users and organizations an",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Serious_Games",
+        "date_published": "08-04-2016",
+        "author": "Sarah Fraser",
+        "departments": [
+            "Natural Resources Canada",
+            "Public Safety Canada"
+        ],
+        "tasks": [
+            "Explore new instruments",
+            "Design a new program"
+        ],
+        "focus": [
+            "Testing"
+        ]
+    },
+    "20": {
+        "id": "20",
+        "slug": "smart-regulation",
+        "title": "Smart Regulation",
+        "subtitle": "Emphasizing prescribed outcomes and reduced burdens and flexibility",
+        "content": "Smart Regulation aims to achieve public confidence in regulatory effectiveness while limiting the burden on those being regulated. Smart regulation often promotes a \u2018bottom-up approach\u2019 to regulation that offers regulated entities the flexibility to develop their own strategies to meet prescribed our an",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Smart_Regulation",
+        "date_published": "08-04-2016",
+        "author": "Katherine Gosselin",
+        "departments": [
+            "Transport Canada",
+            "Environment and Climate Change Canada"
+        ],
+        "tasks": [
+            "Generate new instruments"
+        ],
+        "focus": [
+            "Outcomes",
+            "Options",
+            "Measurement"
+        ]
+    },
+    "21": {
+        "id": "21",
+        "slug": "social-innovation",
+        "title": "Social Innovation",
+        "subtitle": "Preventative and integrated solutions to better address complex social challenges",
+        "content": "There are many definitions for \u201csocial innovation\u201d, which all broadly refer to new solutions that better address complex social challenges, such as youth homelessness, long-term unemployment, or the social isolation of seniors. These solutions can include programming, processes, focus of organizations",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Social_Innovation",
+        "date_published": "05-02-2016",
+        "author": "Francis Nolan-Poupart",
+        "departments": [
+            "Public Health Agency of Canada",
+            "Employment and Social Development Canada"
+        ],
+        "tasks": [
+            "Generate new instruments"
+        ],
+        "focus": [
+            "Outcomes",
+            "Options"
+        ]
+    },
+    "22": {
+        "id": "22",
+        "slug": "social-metrics",
+        "title": "Social Metrics",
+        "subtitle": "Outcomes measures for articulating the impact of programming",
+        "content": "Social metrics are the measurement and articulation of social outcomes. They tend to describe ways to measure the change that individuals experience as a result of a particular intervention and are often used by organizations to articulate the impact of their programming. Social metrics represents th",
+        "article_url": "policomm-commpoli.gccollab.ca\/Policy_practice\/Social_Metrics",
+        "date_published": "17-03-2017",
+        "author": "Francis Nolan-Poupart",
+        "departments": [
+            "Employment and Social Development Canada"
+        ],
+        "tasks": [
+            "Understand my problem or issue"
+        ],
+        "focus": [
+            "Evidence",
+            "Measurement"
+        ]
+    }
+}
