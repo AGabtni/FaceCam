@@ -83,14 +83,11 @@ def user_login(request):
     else:
         return render(request, 'registration/login.html', {})
 
-t = Template('<img src="{{ mydata }}"> <br />\n')
-buffer = ' ' * 1024
-
 def startListen():
     yield (b'--frame\r\n'
            b'Content-Type: image/jpeg\r\n\r\n' + open('static/assets/1.jpg', 'rb').read() + b'\r\n\r\n')
     server_socket = socket.socket()
-    server_socket.bind(('192.168.0.153', 8000))
+    server_socket.bind(('45.64.49.21', 8000))
     encodings_path = 'static/recongition/encodings.pickle'
     face_cascade_path = 'static/recongition/haarcascade_frontalface_default.xml'
 
@@ -141,6 +138,7 @@ def startListen():
             boxes = [(y, x + w, y + h, x) for (x, y, w, h) in rects]
             encodings = face_recognition.face_encodings(rgb, boxes)
             names = []
+            visitors = []
             counter = 0
             if encodings:
                 for encoding in encodings:
@@ -176,8 +174,12 @@ def startListen():
                         cv2.imwrite('frame.jpg', frame)
                         cv2.imwrite('static/recongition/faces/'+imgname, frame)
 
-                        visitor = Visitor(name=name,face=imgname,visit_date=time)
-                        visitor.save()
+                        #add visitor :
+                        if name not in visitors :
+                            visitors.append(name)
+                            visitor = Visitor(name=name,face=imgname,visit_date=time)
+
+                            visitor.save()
 
                     #IF UNKNOWN FACE
                     else :

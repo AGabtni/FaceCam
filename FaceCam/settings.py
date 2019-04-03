@@ -26,10 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '1ox*pkdm*)#(32hz#h)(3cg_3xw1ym0!!dkd#c-b2_lt^(gwzi')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = False
+#DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['45.61.49.21']
+ALLOWED_HOSTS = ['45.64.49.21']
 
 
 # Application definition
@@ -136,9 +136,6 @@ LOGIN_URL = '/userInterface/user_login/'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
 
-# Heroku: Update database configuration from $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 
 #Reduce size of static files :
