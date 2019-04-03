@@ -286,7 +286,6 @@
 		  srcMat.data.set(imageData.data);
 		  cv.cvtColor(srcMat, grayMat, cv.COLOR_RGBA2GRAY);
 		  let faces = [];
-		  let eyes = [];
 		  let size;
 		  if (true) {
 		      let faceVect = new cv.RectVector();
@@ -304,7 +303,6 @@
                   faceMat.delete();
                   faceVect.delete();
                   drawResults(canvasVideoCtx, faces, 'red', size);
-                  drawResults(canvasVideoCtx, eyes, 'yellow', size);
               }
 		  }
 
