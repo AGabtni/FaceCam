@@ -87,7 +87,7 @@ def startListen():
     yield (b'--frame\r\n'
            b'Content-Type: image/jpeg\r\n\r\n' + open('static/assets/1.jpg', 'rb').read() + b'\r\n\r\n')
     server_socket = socket.socket()
-    server_socket.bind(('45.64.49.21', 8000))
+    server_socket.bind(('45.61.49.21', 8000))
     encodings_path = 'static/recongition/encodings.pickle'
     face_cascade_path = 'static/recongition/haarcascade_frontalface_default.xml'
 
