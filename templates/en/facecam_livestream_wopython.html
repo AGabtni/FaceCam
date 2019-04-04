@@ -233,8 +233,13 @@
             await faceapi.loadFaceRecognitionModel("{% static 'models' %}");
 
             alert("Done loading facerecognition models");
-            await endoding();
-		    await recogniton();
+            var labeledFaceDescriptors =   await encoding();
+            const maxDescriptorDistance = 0.6;
+            console.log(labeledFaceDescriptors);
+
+            const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
+
+		    await recogniton(faceMatcher);
         }
         function cleanOverlay (ms){
 
@@ -244,34 +249,41 @@
             context.clearRect(0,0,overlayCanvas.width,overlayCanvas.height);
 
         }
-        async  function endoding(){
+        async  function encoding(){
 
-		    const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras', 'Wambo_Kingston','Yassin_Abdelraouf'];
+		    const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
 
             const labeledFaceDescriptors = await Promise.all(
-              labels.map(async label => {
-                // fetch image data from urls and convert blob to HTMLImage element
-                const staticUrl = "{% static 'dataset' %}";
-                const labelUrl ='/'+label+'.png';
-                const imgUrl =staticUrl+labelUrl;
+                labels.map(async label => {
+                    // fetch image data from urls and convert blob to HTMLImage element
+                    const staticUrl = "{% static 'dataset' %}";
+                    const labelUrl ='/'+label+'.jpg';
+                    const imgUrl =staticUrl+labelUrl;
 
-                const img = await faceapi.fetchImage(imgUrl);
+                    const img = await faceapi.fetchImage(imgUrl);
 
-                // detect the face with the highest score in the image and compute it's landmarks and face descriptor
-                const fullFaceDescription = await faceapi.detectSingleFace(img);
-                    //.withFaceLandmarks().withFaceDescriptor()
+                    // detect the face with the highest score in the image and compute it's landmarks and face descriptor
+                    const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
+                        //.withFaceLandmarks().withFaceDescriptor()
 
-                if (!fullFaceDescription) {
-                  throw new Error('no faces detected for ${label}');
-                }
+                    if (!fullFaceDescription) {
+                      throw new Error('no faces detected for '+label);
+                    }else{
+                        console.log("Encoding for : "+label);
+                    }
+                    const faceDescriptors = [fullFaceDescription.descriptor];
+                    console.log(faceDescriptors)
 
-                const faceDescriptors = [fullFaceDescription.descriptor];
-                return faceapi.LabeledFaceDescriptors(label, faceDescriptors);
-              })
-            )
+                    return faceapi.LabeledFaceDescriptors(label, faceDescriptors);
+                })
+            );
+            console.log(labeledFaceDescriptors);
+
             alert("Finished computin faces and labels");
+
+            return labeledFaceDescriptors;
         }
-        async function recogniton(mtcnnForwardParams) {
+        async function recogniton(faceMatcher) {
 
             const overlayCanvas = document.getElementById('overlay');
             overlayCanvas.width = input.width;
@@ -280,25 +292,39 @@
             const detections = await faceapi.detectSingleFace(input);
             if(detections != null)
             {
-                //faceapi.(document.getElementById('overlay'), detectionsArray, { withScore: true })
-                console.log(detections);
+                // console.log(detections);
+                //FaceMtcher results
+                const results = fullFaceDescriptions.map(fd=> faceMatcher.findBestMatch(fd.descriptor));
+                if(results !=  null){
+                        const boxesWithText = results.map((bestMatch, i) => {
+                            const box = fullFaceDescriptions[i].detection.box;
+                            const text = bestMatch.toString();
+                            const boxWithText = new faceapi.BoxWithText(box, text);
+                            return boxWithText;
+                        });
+                        faceapi.drawDetection(overlayCanvas, boxesWithText)
 
-                faceapi.drawDetection(overlayCanvas, detections, { withScore: true });
+                }
+                else{
 
+                    faceapi.drawDetection(overlayCanvas, detections, { withScore: true });
+
+
+                }
                 if(visitors.length <6){
+                    canvasVisitor = document.getElementById('visitor'+visitorsCount);
+                    canvasVisitorCtx = canvasVisitor.getContext('2d');
 
-                      canvasVisitor = document.getElementById('visitor'+visitorsCount);
-                      canvasVisitorCtx = canvasVisitor.getContext('2d');
+                    visitorName = "Unknow visitor "+visitorsCount;
+                    visitors.push(visitorName);
 
-                      visitorName = "Unknow visitor "+visitorsCount;
-                      visitors.push(visitorName);
+                    drawVisitor(canvasVisitorCtx);
+                    document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
+                    visitorsCount +=1 ;
 
-                      drawVisitor(canvasVisitorCtx);
-                      document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
-                      visitorsCount +=1 ;
-
-                  }
-            }else if (detections == null)
+                }
+                }
+            else if (detections == null)
             {
 
             }
