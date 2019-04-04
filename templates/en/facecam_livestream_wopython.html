@@ -82,7 +82,12 @@
                 </section>
                 <div class="aParent">
                     <div id="container">
-                        <canvas id="video-canvas">No stream available</canvas>
+                        <div style="position: relative;">
+                            <canvas id="video-canvas" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+                            <canvas id="overlay" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+                        </div>
+
+
                         <input type="checkbox" id="face" name="classifier" value="face" checked>
                         <label for="face">face</label>
 
@@ -231,18 +236,50 @@
 
 		  //New code :
             loadModels();
-		  requestAnimationFrame(processVideo);
-		}
 
+		}
+        async function onPlay() {
+          // run face detection & recognition
+          // ...
+
+          setTimeout(() => onPlay(videoEl))
+        }
         let visitors = [];
         let visitorsCount = 1;
 
         async function loadModels() {
-            await faceapi.loadSsdMobilenetv1Model("{% static 'models/ssd_mobilenetv1_model-shard1' %}");
-            await faceapi.loadFaceLandmarkModel("{% static 'models/face_landmark_68_model-shard1' %}");
-            await faceapi.loadFaceRecognitionModel("{% static 'models/face_recognition_model-shard1' %}");
+            await faceapi.loadSsdMobilenetv1Model("{% static 'models' %}")
+            await faceapi.loadFaceLandmarkModel("{% static 'models' %}");
+            await faceapi.loadFaceRecognitionModel("{% static 'models' %}");
 
             alert("Done loading facerecognition models");
+            const mtcnnForwardParams = {
+              maxNumScales: 10,
+              scaleFactor: 0.709,
+              scoreThresholds: [0.6, 0.7, 0.7],
+              minFaceSize: 20
+            };
+
+		    recogniton(mtcnnForwardParams);
+        }
+        async function recogniton(mtcnnForwardParams) {
+
+
+            input = document.getElementById("video-canvas");
+            const detections = await faceapi.detectSingleFace(input);
+            if(detections != null)
+            {
+                const canvas = document.getElementById('overlay')
+                canvas.width = input.width
+                canvas.height = input.height
+                //faceapi.(document.getElementById('overlay'), detectionsArray, { withScore: true })
+                console.log(detections);
+                faceapi.drawDetection(canvas, detections, { withScore: true })
+
+
+            }
+            setTimeout(() => recogniton(mtcnnForwardParams));
+
         }
         function processVideo() {
 		  stats.begin();
