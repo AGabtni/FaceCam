@@ -279,7 +279,7 @@
             const maxDescriptorDistance = 0.6;
             return new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
         }
-        async function recogniton(faceMatcher) {
+        async function recogniton() {
 
             const overlayCanvas = document.getElementById('overlay');
             overlayCanvas.width = input.width;
@@ -295,7 +295,7 @@
             {
                 //FaceMtcher results
 
-                /*const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
+                const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
 
                 const labeledFaceDescriptors = await Promise.all(
                     labels.map(async label => {
@@ -323,7 +323,6 @@
 
                 const maxDescriptorDistance = 0.6;
                 const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
-                */
                 const results = detections.map(fd=> faceMatcher.findBestMatch(fd.descriptor));
 
                 if(results.length > 0){
