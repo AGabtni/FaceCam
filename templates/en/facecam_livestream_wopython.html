@@ -294,7 +294,7 @@
 		      cv.pyrDown(faceMat, faceMat);
 		      size = faceMat.size();
               //git git
-		      faceRects = faceClassifier.detectMultiScale(faceMat, faceVect).objects;
+		      faceRects = faceClassifier.detectMultiScale(faceMat, faceVect);
               if(faceRects != 0 ){
                   for (let i = 0; i < faceVect.size(); i++) {
                     let face = faceVect.get(i);
