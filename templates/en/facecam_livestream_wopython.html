@@ -232,14 +232,13 @@
             await faceapi.loadFaceLandmarkModel("{% static 'models' %}");
             await faceapi.loadFaceRecognitionModel("{% static 'models' %}");
 
-            alert("Done loading facerecognition models");
-            var labeledFaceDescriptors =   await encoding();
-            const maxDescriptorDistance = 0.6;
-            console.log(labeledFaceDescriptors);
+            alert("Done loading facerecognition models now encoding dataset ..");
+            //const labeledDescriptors = await encode();
+            //alert("Descriptions + labels aquired from dataset");
 
-            const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
+            //const FaceMatcher = await encode();
 
-		    await recogniton(faceMatcher);
+		    await recogniton();
         }
         function cleanOverlay (ms){
 
@@ -249,39 +248,36 @@
             context.clearRect(0,0,overlayCanvas.width,overlayCanvas.height);
 
         }
-        async  function encoding(){
+        async function encode(){
+
 
 		    const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
 
             const labeledFaceDescriptors = await Promise.all(
                 labels.map(async label => {
-                    // fetch image data from urls and convert blob to HTMLImage element
-                    const staticUrl = "{% static 'dataset' %}";
-                    const labelUrl ='/'+label+'.jpg';
-                    const imgUrl =staticUrl+labelUrl;
+                        // fetch image data from urls and convert blob to HTMLImage element
+                        const staticUrl = "{% static 'dataset' %}";
+                        const labelUrl ='/'+label+'.png';
+                        const imgUrl =staticUrl+labelUrl;
 
-                    const img = await faceapi.fetchImage(imgUrl);
+                        const img = await faceapi.fetchImage(imgUrl);
 
-                    // detect the face with the highest score in the image and compute it's landmarks and face descriptor
-                    const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
-                        //.withFaceLandmarks().withFaceDescriptor()
+                        // detect the face with the highest score in the image and compute it's landmarks and face descriptor
+                        const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
+                            //.withFaceLandmarks().withFaceDescriptor()
 
-                    if (!fullFaceDescription) {
-                      throw new Error('no faces detected for '+label);
-                    }else{
-                        console.log("Encoding for : "+label);
-                    }
-                    const faceDescriptors = [fullFaceDescription.descriptor];
-                    console.log(faceDescriptors)
+                        if (!fullFaceDescription) {
+                          throw new Error('no faces detected for '+label);
+                        }else{
+                            console.log("Encoding for : "+label);
+                        }
+                        const faceDescriptors = [fullFaceDescription.descriptor];
 
-                    return faceapi.LabeledFaceDescriptors(label, faceDescriptors);
-                })
+                        return new faceapi.LabeledFaceDescriptors(label, faceDescriptors);
+                    })
             );
-            console.log(labeledFaceDescriptors);
-
-            alert("Finished computin faces and labels");
-
-            return labeledFaceDescriptors;
+            const maxDescriptorDistance = 0.6;
+            return new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
         }
         async function recogniton(faceMatcher) {
 
@@ -289,41 +285,90 @@
             overlayCanvas.width = input.width;
             overlayCanvas.height = input.height;
 
-            const detections = await faceapi.detectSingleFace(input);
-            if(detections != null)
+            const detections = await faceapi.detectAllFaces(input).withFaceLandmarks().withFaceDescriptors();
+
+            faceapi.drawDetection(overlayCanvas, detections, { withScore: true });
+
+
+
+            if(detections.length > 0)
             {
-                // console.log(detections);
                 //FaceMtcher results
-                const results = fullFaceDescriptions.map(fd=> faceMatcher.findBestMatch(fd.descriptor));
-                if(results !=  null){
+
+                /*const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
+
+                const labeledFaceDescriptors = await Promise.all(
+                    labels.map(async label => {
+                            // fetch image data from urls and convert blob to HTMLImage element
+                            const staticUrl = "{% static 'dataset' %}";
+                            const labelUrl ='/'+label+'.png';
+                            const imgUrl =staticUrl+labelUrl;
+
+                            const img = await faceapi.fetchImage(imgUrl);
+
+                            // detect the face with the highest score in the image and compute it's landmarks and face descriptor
+                            const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
+                                //.withFaceLandmarks().withFaceDescriptor()
+
+                            if (!fullFaceDescription) {
+                              throw new Error('no faces detected for '+label);
+                            }else{
+                                console.log("Encoding for : "+label);
+                            }
+                            const faceDescriptors = [fullFaceDescription.descriptor];
+
+                            return new faceapi.LabeledFaceDescriptors(label, faceDescriptors);
+                        })
+                );
+
+                const maxDescriptorDistance = 0.6;
+                const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
+                */
+                const results = detections.map(fd=> faceMatcher.findBestMatch(fd.descriptor));
+
+                if(results.length > 0){
+                        var name = "Unknown";
                         const boxesWithText = results.map((bestMatch, i) => {
-                            const box = fullFaceDescriptions[i].detection.box;
+                            const box = detections[i].detection.box;
                             const text = bestMatch.toString();
+                            name = text;
                             const boxWithText = new faceapi.BoxWithText(box, text);
                             return boxWithText;
                         });
-                        faceapi.drawDetection(overlayCanvas, boxesWithText)
+                        faceapi.drawDetection(overlayCanvas, boxesWithText);
+                        if(visitors.length <6){
+                            canvasVisitor = document.getElementById('visitor'+visitorsCount);
+                            canvasVisitorCtx = canvasVisitor.getContext('2d');
+
+                            visitorName = name;
+                            visitors.push(visitorName);
+
+                            drawVisitor(canvasVisitorCtx);
+                            document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
+                            visitorsCount +=1 ;
+
+                        }
 
                 }
                 else{
-
                     faceapi.drawDetection(overlayCanvas, detections, { withScore: true });
 
+                    if(visitors.length <6){
+                        canvasVisitor = document.getElementById('visitor'+visitorsCount);
+                        canvasVisitorCtx = canvasVisitor.getContext('2d');
+
+                        visitorName = "Unknow visitor "+visitorsCount;
+                        visitors.push(visitorName);
+
+                        drawVisitor(canvasVisitorCtx);
+                        document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
+                        visitorsCount +=1 ;
+                    }
+
 
                 }
-                if(visitors.length <6){
-                    canvasVisitor = document.getElementById('visitor'+visitorsCount);
-                    canvasVisitorCtx = canvasVisitor.getContext('2d');
 
-                    visitorName = "Unknow visitor "+visitorsCount;
-                    visitors.push(visitorName);
-
-                    drawVisitor(canvasVisitorCtx);
-                    document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
-                    visitorsCount +=1 ;
-
-                }
-                }
+            }
             else if (detections == null)
             {
 
