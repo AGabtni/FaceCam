@@ -56,6 +56,23 @@
                 </div>
             </nav>
         </header>
+        <style>
+            .aParent div {
+                float: left;
+                clear: none;
+            }
+
+            #container {
+
+                padding-left: 50px;
+            }
+            tr.spaceUnder>td {
+                padding-bottom: 1em;
+            }
+            td,th {
+                padding-left: 2em;
+            }
+        </style>
         <main id="Main8" class="Widget Main" role="">
             <div id="Container19" class="Widget Container" role="">
                 <section id="Section31" class="Widget Section" role="">
@@ -63,21 +80,51 @@
                         <p>FaceCam Live Stream&nbsp;</p>
                     </h1>
                 </section>
-                 <div id="container" align="center">
-                    <canvas id="video-canvas">
+                <div class="aParent">
+                    <div id="container">
+                        <canvas id="video-canvas">No stream available</canvas>
+                        <input type="checkbox" id="face" name="classifier" value="face" checked>
+                        <label for="face">face</label>
 
-                        No stream available
-                    </canvas>
-                     <canvas id="output" width=640 height=480 style="max-width: 100%"></canvas>
+  				    </div>
+                    <div class="text-center">
 
-  				 </div>
+                    </div>
 
-  				<div class="text-center">
-    				<input type="checkbox" id="face" name="classifier" value="face" checked>
-    				<label for="face">face</label>
-    				<input type="checkbox" id="eye" name="cascade" value="eye">
-    				<label for="eye">eye</label>
-  				</div>
+                    <div id="visitors">
+                        <table>
+                            <tr>
+                                <th id="v_1"></th>
+                                <th id="v_2"></th>
+                            </tr>
+                            <tr>
+                                <td><canvas id="visitor1"></canvas></td>
+                                <td><canvas id="visitor2"></canvas></td>
+                            </tr>
+                            <tr class ="spaceUnder">
+                                <th id="v_3"></th>
+                                <th id="v_4"></th>
+                            </tr>
+                            <tr >
+                                <td><canvas id="visitor3"></canvas></td>
+                                <td><canvas id="visitor4"></canvas></td>
+                            </tr>
+
+                            <tr class ="spaceUnder">
+                                <th id="v_5"></th>
+                                <th id="v_6"></th>
+                            </tr>
+                            <tr >
+                                <td><canvas id="visitor5"></canvas></td>
+                                <td><canvas id="visitor6"></canvas></td>
+
+                            </tr>
+                        </table>
+
+  				     </div>
+                </div>
+
+
 
             </div>
             <div id="Container20" class="Widget Container" role=""></div>
@@ -133,101 +180,8 @@
     <script type="text/javascript" src="../../static/widgets/_global/Title/js/Title.js?v=1.0.110-beta"></script>
     <script type="text/javascript" src="../../static/widgets/member2/Footer/js/Footer.js?v=1.0.16-beta"></script>
     <script type="text/javascript" src="../../static/widgets/_global/Image/js/Image.js?v=1.0.42-beta"></script>
-
-    <!--NEW FACE DECTOR HERE-->
-    <script type="text/javascript">
-
-        var netDet = undefined, netRecogn = undefined;
-        var persons = {};
-
-        //1- [Run face detection model]
-        function detectFaces(img) {
-            var blob = cv.blobFromImage(img, 1, {width: 128, height: 96}, [104, 177, 123, 0], false, false);
-            netDet.setInput(blob);
-            var out = netDet.forward();
-            var faces = [];
-            for (var i = 0, n = out.data32F.length; i < n; i += 7) {
-                var confidence = out.data32F[i + 2];
-                var left = out.data32F[i + 3] * img.cols;
-                var top = out.data32F[i + 4] * img.rows;
-                var right = out.data32F[i + 5] * img.cols;
-                var bottom = out.data32F[i + 6] * img.rows;
-                left = Math.min(Math.max(0, left), img.cols - 1);
-                right = Math.min(Math.max(0, right), img.cols - 1);
-                bottom = Math.min(Math.max(0, bottom), img.rows - 1);
-                top = Math.min(Math.max(0, top), img.rows - 1);
-                if (confidence > 0.5 && left < right && top < bottom) {
-                    faces.push({x: left, y: top, width: right - left, height: bottom - top})
-                }
-            }
-            blob.delete();
-            out.delete();
-            return faces;
-        };
-
-        //! [Get 128 floating points feature vector]
-        function face2vec(face) {
-            var blob = cv.blobFromImage(face, 1.0 / 255, {width: 96, height: 96}, [0, 0, 0, 0], true, false)
-            netRecogn.setInput(blob);
-            var vec = netRecogn.forward();
-            blob.delete();
-            return vec;
-        };
-
-
-        //! [Recognize]
-        function recognize(face) {
-            var vec = face2vec(face);
-            var bestMatchName = 'unknown';
-            var bestMatchScore = 0.5;  // Actually, the minimum is -1 but we use it as a threshold.
-            for (name in persons) {
-                var personVec = persons[name];
-                var score = vec.dot(personVec);
-                if (score > bestMatchScore) {
-                    bestMatchScore = score;
-                    bestMatchName = name;
-                }
-            }
-            vec.delete();
-            return bestMatchName;
-        };
-
-
-        function loadModels(callback) {
-            var utils = new Utils('');
-            var proto = 'https://raw.githubusercontent.com/opencv/opencv/master/samples/dnn/face_detector/deploy.prototxt';
-            var weights = 'https://raw.githubusercontent.com/opencv/opencv_3rdparty/dnn_samples_face_detector_20180205_fp16/res10_300x300_ssd_iter_140000_fp16.caffemodel';
-            var recognModel = 'https://raw.githubusercontent.com/pyannote/pyannote-data/master/openface.nn4.small2.v1.t7';
-            utils.createFileFromUrl('face_detector.prototxt', proto, () => {
-                document.getElementById('status').innerHTML = 'Downloading face_detector.caffemodel';
-                utils.createFileFromUrl('face_detector.caffemodel', weights, () => {
-                    document.getElementById('status').innerHTML = 'Downloading OpenFace model';
-                    utils.createFileFromUrl('face_recognition.t7', recognModel, () => {
-                        document.getElementById('status').innerHTML = '';
-                        netDet = cv.readNetFromCaffe('face_detector.prototxt', 'face_detector.caffemodel');
-                        netRecogn = cv.readNetFromTorch('face_recognition.t7');
-                        callback();
-                    });
-                });
-            });
-        };
-        function main() {
-            //Create cam object :
-            var output = document.getElementById('output');
-            var camera = document.createElement("video");
-            camera.setAttribute("width", output.width);
-            camera.setAttribute("height", output.height);
-
-
-
-
-        }
-
-
-
-
-
-    </script>
+    {% load static %}
+    <script src="{% static 'js/face-api.js' %}"></script>
     <script type="text/javascript">
 
 		let videoWidth = 640;
@@ -275,17 +229,31 @@
 		  eyeClassifier = new cv.CascadeClassifier();
 		  eyeClassifier.load('haarcascade_eye.xml');
 
+		  //New code :
+            loadModels();
 		  requestAnimationFrame(processVideo);
 		}
 
-		function processVideo() {
+        let visitors = [];
+        let visitorsCount = 1;
+
+        async function loadModels() {
+            await faceapi.loadSsdMobilenetv1Model("{% static 'models/ssd_mobilenetv1_model-shard1' %}");
+            await faceapi.loadFaceLandmarkModel("{% static 'models/face_landmark_68_model-shard1' %}");
+            await faceapi.loadFaceRecognitionModel("{% static 'models/face_recognition_model-shard1' %}");
+
+            alert("Done loading facerecognition models");
+        }
+        function processVideo() {
 		  stats.begin();
+
 		  canvasVideoCtx = canvasVideo.getContext('2d');
 		  //canvasInputCtx.drawImage(canvasVideo, 0, 0, videoWidth, videoHeight);
 		  let imageData = canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight);
 		  srcMat.data.set(imageData.data);
 		  cv.cvtColor(srcMat, grayMat, cv.COLOR_RGBA2GRAY);
 		  let faces = [];
+
 		  let size;
 		  if (true) {
 		      let faceVect = new cv.RectVector();
@@ -294,22 +262,58 @@
 		      cv.pyrDown(faceMat, faceMat);
 		      size = faceMat.size();
               //git git
-		      faceRects = faceClassifier.detectMultiScale(faceMat, faceVect);
-              if(faceRects != 0 ){
+		      faceClassifier.detectMultiScale(faceMat, faceVect);
+              if(faceVect.size() > 0 ){
                   for (let i = 0; i < faceVect.size(); i++) {
                     let face = faceVect.get(i);
                     faces.push(new cv.Rect(face.x, face.y, face.width, face.height));
                   }
+
                   faceMat.delete();
                   faceVect.delete();
                   drawResults(canvasVideoCtx, faces, 'red', size);
+                  if(visitors.length <6){
+
+                      canvasVisitor = document.getElementById('visitor'+visitorsCount);
+                      canvasVisitorCtx = canvasVisitor.getContext('2d');
+
+                      visitorName = "Unknow visitor "+visitorsCount;
+                      visitors.push(visitorName);
+
+                      drawVisitor(canvasVisitorCtx,faces,imageData,'red',size);
+                      document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
+                      visitorsCount +=1 ;
+
+                  }
               }
 		  }
-
 		  stats.end();
 		  requestAnimationFrame(processVideo);
 		}
 
+		function drawVisitor(ctx, results,frame,color,size) {
+            ctx.canvas.width = 320;
+            ctx.canvas.height = 240;
+		    for (let i = 0; i < results.length; ++i) {
+
+                let rect = results[i];
+                let xRatio = videoWidth / size.width;
+                let yRatio = videoHeight / size.height;
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = color;
+                frameData = canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight)
+                var newCanvas = $("<canvas>")
+                    .attr("width", frameData.width)
+                    .attr("height", frameData.height)[0];
+                newCanvas.getContext("2d").putImageData(frameData, 0, 0);
+                ctx.scale(ctx.canvas.width/640,ctx.canvas.width/480)
+                ctx.drawImage(newCanvas,0,0);
+                //ctx.putImageData(canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight), 0, 0)
+                //ctx.putImageData(canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight),100 ,100)
+                //ctx.strokeRect(rect.x*xRatio, rect.y*yRatio, rect.width*xRatio, rect.height*yRatio);
+
+            }
+        }
 		function drawResults(ctx, results, color, size) {
 		  for (let i = 0; i < results.length; ++i) {
 		    let rect = results[i];
@@ -350,5 +354,5 @@
 		  startVideoProcessing();
 		}
 	</script>
-	-->
+
 </html>
