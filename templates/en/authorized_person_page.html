@@ -4,10 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
-            <p>
-                <span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">More info</span>
-                <br>
-            </p>
+            FaceCam
         </title>
         {% load staticfiles %}
         {% load static %}
@@ -58,57 +55,19 @@
         </header>
         <main id="Main9" class="Widget Main" role="">
             <div id="Container27" class="Widget Container" role="">
-                <section id="Section40" class="Widget Section" role="">
-                    <h1 id="Title26" class="Widget Title" role="">
-                        <p>List of authorized persons</p>
-                    </h1>
-                    <section id="Section41" class="Widget Section" role="">
-                        <div id="Text44" class="Widget Text" role=""><span>User 1</span></div>
-                        <div id="Text45" class="Widget Text" role=""><span>User 2</span></div>
-                        <div id="Text46" class="Widget Text" role=""><span>User 3</span></div>
-                        <div id="Text47" class="Widget Text" role=""><span>User 4</span></div>
-                        <div id="Text48" class="Widget Text" role=""><span>User 5</span></div>
-                        <div id="Text49" class="Widget Text" role=""><span>User 6</span></div>
-                    </section>
-                    <section id="Section42" class="Widget Section" role="">
-                        <img src="../../static/assets/Ic_settings_48px.svg2.png" id="Image47" class="Widget Image" role=""></img>
-
-                        <div id="Text50" class="Widget Text" role=""><span>Settings</span></div>
-                    </section>
-                    <section id="Section43" class="Widget Section" role="">
-                        <section id="Section44" class="Widget Section" role="">
-                            <img src="../../static/assets/add.png" id="Image48" class="Widget Image" role=""></img>
-
-                            <div id="Text51" class="Widget Text" role=""><span>Add an New User</span></div>
-                        </section>
-                        <section id="Section45" class="Widget Section" role="">
-                            <img src="../../static/assets/remove-user.png" id="Image49" class="Widget Image" role=""></img>
-
-                            <div id="Text52" class="Widget Text" role=""><span>Remove an User</span></div>
-                        </section>
-                        <section id="Section46" class="Widget Section" role="">
-                            <img src="../../static/assets/2f22bc236cc4c4c07f3f9cff2bdfc737.png" id="Image50" class="Widget Image" role=""></img>
-
-                            <div id="Text53" class="Widget Text" role=""><span>Edit an User Information</span></div>
-                        </section>
-                    </section>
-                </section>
                 <section id="Section47" class="Widget Section" role="">
                     <h1 id="Title27" class="Widget Title" role="">
-                        <p>Information on the person</p>
+                        <p>Information on user</p>
                     </h1>
                     <section id="Section48" class="Widget Section" role=""><img src="../../static/assets/Profile_avatar_placeholder_large.png" id="Image51" class="Widget Image" role=""></img></section>
                     <section id="Section49" class="Widget Section" role="">
                         <div id="Text54" class="Widget Text" role="">
-                            <span>LastName: {{ user.get_password1 }}</span>
+                            <span>LastName: </span>
                         </div>
                         <div id="Text55" class="Widget Text" role="">
-                            <span>Firstname:</span>
+                            <span>Firstname: {{ user.get_username }}</span>
                         </div>
                         <div id="Text56" class="Widget Text" role=""><span>Username:</span></div>
-                        <div id="Text57" class="Widget Text" role=""><span>Employee #:</span></div>
-                        <div id="Text58" class="Widget Text" role=""><span>Title:</span></div>
-                        <div id="Text59" class="Widget Text" role=""><span>entered the room:</span></div>
                     </section>
                 </section>
             </div>

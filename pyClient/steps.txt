@@ -1,0 +1,27 @@
+
+1. Lance le serveur avec un client SSH (putty par ex) :
+	ip : 45.61.49.21
+	username : root
+	pass : FaceCam2019/
+2. lance  :
+	nodejs websocket-relay.js supersecret 8081 8082
+
+3. Sur la raspberyy pour lancer le stream :  
+
+ffmpeg \
+	-f v4l2 \
+		-framerate 25 -video_size 640x480 -i /dev/video0 \
+	-f mpegts \
+		-codec:v mpeg1video -s 640x480 -b:v 1000k -bf 0 \
+	http://45.61.49.21:8081/supersecret
+
+
+4. Duplique le client SSH avec putty :
+	a-clique droit sur de haut de la fentre de ta session et clique sur dupliauer puis repte 1 (sans specifier ip puisque c'est un duplicata)
+	b- dans se nouveau terminal :
+		-> workon FaceCam_venv 
+		-> cd /home/agabtni/FaceCam	
+		-> python manage.py runserver 45.61.49.21:8000
+
+
+5. dans ton navigateur lance : 45.61.49.21:8000
