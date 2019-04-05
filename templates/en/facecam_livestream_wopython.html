@@ -73,11 +73,12 @@
             .previous {
               left: 0;
               margin-left: 15px;
+                margin-bottom: 150px;
             }
             .next {
               right: 0;
 
-              margin-right: 400px;
+              margin-right: 200px;
 
                           }
             .aParent div {
@@ -95,6 +96,35 @@
             td,th {
                 padding-left: 2em;
             }
+            .rightRotate{
+
+                margin-left: 700px;
+
+            }
+            .rightRotate.p{
+                margin-left: -50px;
+                position: center ;
+            }
+            .sliderForm[type=range][orient=vertical]
+            {
+                writing-mode: bt-lr; /* IE */
+                -webkit-appearance: slider-vertical; /* WebKit */
+                width: 8px;
+                height: 175px;
+                padding: 0 5px;
+
+            }
+            .slider {
+              width: 175px;
+            }
+            .stream{
+
+                margin-bottom: 0px;
+            }
+            #rotateLeftRight{
+
+                margin-bottom: 25px;
+            }
         </style>
         <main id="Main8" class="Widget Main" role="">
             <div id="Container19" class="Widget Container" role="">
@@ -105,18 +135,35 @@
                 </section>
                 <div id = "Container20" class="parent">
                     <div id = "Container21" class="previous" id="container">
-                        <div style="position: relative;">
+                        <div>
+                            <form  method ="post">
+                                <p>Position(Left or right):
+                                    <span id="servoPos"></span>
+                                </p>
+                                {% csrf_token %}
+
+                                <input type="range" name = "horizontal" min="0" max="180" class="slider" id="servoSlider" onchange="servo(this.value)"/>
+                                <button id="rotateLeftRight" type="submit"  value="Rotate" onclick="sending();" >Rotate</button>
+
+                            </form>
+                        </div>
+                        <div class="stream" style="position: relative;">
                             <canvas id="video-canvas" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
                             <canvas id="overlay" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
                         </div>
 
-
-                        <input type="checkbox" id="face" name="classifier" value="face" checked>
-                        <label for="face">face</label>
-
   				    </div>
+                    <div class="rightRotate">
+                            <p class="rightRotate p">Position(up or down):
+                                <span id="servoPos2"></span>
+                            </p>
+                            {% csrf_token %}
+		                    <input type="range" name="vectival" min="0" max="180" orient="vertical" class="sliderForm" id="servoSlider2" onchange="servo2(this.value)"/><br/>
+                            <button  type="submit"  value="Rotate" onclick="sending();" >Rotate</button>
 
-                    <div id = "Container22" class="next" id="visitors">
+                        </div>
+
+                    <div id = "Container22" class="next">
                         <table>
                             <tr>
                                 <th id="v_1"></th>
@@ -135,7 +182,9 @@
                                     </script>
 
                                 </td>
-                                <td><canvas id="visitor2"></canvas></td>
+                                <td>
+                                    <input width="30" height="30" type='button' value="x" onclick='updateData();'>
+                                    <canvas id="visitor2"></canvas></td>
                                 <td><canvas id="visitor3"></canvas></td>
                             </tr>
                             <tr class ="spaceUnder">
@@ -191,6 +240,57 @@
     <script type="text/javascript" src="../../static/widgets/_global/Image/js/Image.js?v=1.0.42-beta"></script>
     {% load static %}
     <script src="{% static 'js/face-api.js' %}"></script>
+    <script type="text/javascript">
+    var slider = document.getElementById("servoSlider");
+    var servoP = document.getElementById("servoPos");
+	var slider2 = document.getElementById("servoSlider2");
+    var servoP2 = document.getElementById("servoPos2");
+    servoP.innerHTML = slider.value;
+	servoP2.innerHTML = slider2.value;
+    slider.oninput = function() {
+      slider.value = this.value;
+      servoP.innerHTML = this.value;
+    }
+	slider2.oninput = function() {
+
+      slider2.value = this.value;
+      servoP2.innerHTML = this.value;
+    }
+	var url = 'ws://192.168.0.194:5000';
+	var mySocket = new WebSocket(url);
+
+	mySocket.onopen = function () {
+		console.log('opened !');
+		//container.innerHTML += '<h2>Connection established : ' + url + '</h2>';
+	};
+
+	mySocket.onmessage = function (e) {
+		console.log('server: ' + e.data);
+		//container.innerHTML += '<div><span>Server: </span><span>' + e.data + '</span></div>';
+	};
+
+	mySocket.onclose = function () {
+		console.log('closed !');
+		//container.innerHTML += '<h2>Connection closed</h2>';
+	};
+	function sending(){
+
+		mySocket.send(slider.value);
+		mySocket.send(slider2.value);
+
+	}
+
+	/*
+    $.ajaxSetup({timeout:1000});
+    function servo(pos) {
+      $.get("/?value=" + pos + "&");
+      {Connection: close};
+    }
+	function servo2(pos) {
+      $.get("/?value=" + pos + "&");
+      {Connection: close};
+    }*/
+  </script>
     <script type="text/javascript">
 
         var canvas = document.getElementById('video-canvas');
