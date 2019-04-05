@@ -40,7 +40,7 @@
                     <ul class="Widget Navigation navbar-nav nav" id="Navigation17" role="navigation">
                         {% if user.is_authenticated %}
                             <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem68" role="menuitem"> <a href="#" >{{ user.get_username }}</a> </li>
-                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem69" role="menuitem"> <a href="{% url 'recogn' %}" >FaceCam LiveStream</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem69" role="menuitem"> <a href="{% url 'recognWoPy' %}" >FaceCam LiveStream</a> </li>
                             <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem70" role="menuitem"> <a href="#" >Documentations</a> </li>
                             <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem71" role="menuitem"> <a href="#" >Contact</a> </li>
                             <li style="color:white;" class="Widget NavigationItem nav-item nav-link" id="NavigationItem72" role="menuitem">
@@ -87,19 +87,6 @@
                             </p>
                         </a>
                     </section>
-                    <section id="Section83" class="Widget Section" role="">
-                        <img src="../../static/assets/database_admin.svg" id="Image39" class="Widget Image" role=""></img>
-
-                        <h1 id="Title52" class="Widget Title" role="">
-                            <p>
-                                <span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">Database Administration</span>
-                                <br>
-                            </p>
-                        </h1>
-                        <div id="Text159" class="Widget Text" role=""><span>This will give you access to the user database to add, delete or edit a profile.</span></div>
-                        <a href="admin_choice_page.html" id="Link2" class="Widget Link" role="">More info
-</a>
-                    </section>
                     <section id="Section84" class="Widget Section" role="">
                         <img src="../../static/assets/api.svg" id="Image40" class="Widget Image" role=""></img>
 
@@ -107,8 +94,7 @@
                             <p>API Documentation</p>
                         </h1>
                         <div id="Text160" class="Widget Text" role=""><span>The API Documentation of the FaceCam.</span></div>
-                        <a href="/.html" id="Link3" class="Widget Link" role="">More info
-</a>
+                        <a href="/.html" id="Link3" class="Widget Link" role="">More info</a>
                     </section>
                 </div>
                 <div id="Container36" class="Widget Container" role="">
@@ -132,17 +118,6 @@
                         <a href="{% url 'userInfo' %}" id="Link5" class="Widget Link" role="">FaceCam
 </a>
                     </section>
-                    <section id="Section85" class="Widget Section" role="">
-                        <img src="../../static/assets/microphone.svg" id="Image42" class="Widget Image" role=""></img>
-
-                        <h1 id="Title54" class="Widget Title" role="">
-                            Speaker
-                        </h1>
-                        <div id="Text161" class="Widget Text" role=""><span>This will give you access to the Microphone&nbsp;</span></div>
-                        <a href="/.html" id="Link6" class="Widget Link" role="">
-                            More Info
-                        </a>
-                    </section>
                 </div>
             </div>
         </main>
@@ -150,12 +125,8 @@
             <div id="Container30" class="Widget Container" role="">
                 <section id="Section72" class="Widget Section" role="">
                     <div id="Text150" class="Widget Text" role="">
-                        <span>Our Partners</span></div>
                         <section id="Section73" class="Widget Section" role="">
-                            <img src="../../static/assets/64px-Google__G__Logo.svg2.png" id="Image25" class="Widget Image" role=""></img>
-                            <img src="../../static/assets/intel.png" id="Image26" class="Widget Image" role=""></img>
-                            <img src="../../static/assets/Cisco_logo.svg" id="Image27" class="Widget Image" role=""></img>
-                            <img src="../../static/assets/uottawa_hor_white.png" id="Image28" class="Widget Image" role=""></img></section>
+
                         </section>
             </div>
         </footer>

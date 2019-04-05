@@ -28,7 +28,7 @@
     <body id="page-3" pageId="" class="Widget Page" role="page">
 
         <header id="Header2" class="Widget Header" role="">
-            <a href="page-8" id="member2__Image2" class="Widget member2__Image" role=""><img src="../../static/assets/cctv.png"></img></a>
+            <a href="{% url 'index' %}" id="member2__Image2" class="Widget member2__Image" role=""><img src="../../static/assets/cctv.png"></img></a>
             <nav class="Widget Navbar navbar navbar-toggleable-md navbar-light bg-faded" id="Navbar2" role="navigation navbar">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#Navbar2Responsive" aria-controls="Navbar2Responsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -158,12 +158,29 @@
                                 <span id="servoPos2"></span>
                             </p>
                             {% csrf_token %}
-		                    <input type="range" name="vectival" min="0" max="180" orient="vertical" class="sliderForm" id="servoSlider2" onchange="servo2(this.value)"/><br/>
-                            <button  type="submit"  value="Rotate" onclick="sending();" >Rotate</button>
+                            <form method="post">
+                                <input type="range" name="vectival" min="0" max="180" orient="vertical" class="sliderForm" id="servoSlider2" onchange="servo2(this.value)"/><br/>
+                                <button  type="submit"  value="Rotate" onclick="sending();" >Rotate</button>
+                            </form>
 
                         </div>
 
                     <div id = "Container22" class="next">
+                        <script type="text/javascript">
+
+                             function clearVisitor(visitor,index) {
+
+                                 console.log("cleaning");
+                                 canvas = document.getElementById(visitor);
+                                 title = document.getElementById('v_'+index)
+                                 const context = canvas.getContext('2d');
+
+                                 //hardcoded values
+                                 context.clearRect(0,0,193*3.35,218*2.2);
+                                 title.innerHTML = "";
+                                 removeVisitor(index);
+                             }
+                        </script>
                         <table>
                             <tr>
                                 <th id="v_1"></th>
@@ -173,8 +190,10 @@
                             <tr>
 
                                 <td>
+
                                     <input  type="hidden" id="canvasData" name="canvasData"/>
                                     <input type='button' value="update" onclick='updateData();'>
+                                    <input  id="Rmv6" width="20" height="200" type='button' value="x" onclick='clearVisitor("visitor1",1);'>
                                     <canvas id="visitor1"></canvas>
                                     <script type="text/javascript">
                                         function updateData() {
@@ -183,9 +202,12 @@
 
                                 </td>
                                 <td>
-                                    <input width="30" height="30" type='button' value="x" onclick='updateData();'>
+                                    <input id="Rmv2" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor2",2);'>
                                     <canvas id="visitor2"></canvas></td>
-                                <td><canvas id="visitor3"></canvas></td>
+                                <td>
+                                    <input id="Rmv3" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor3",3);'>
+                                    <canvas id="visitor3"></canvas>
+                                </td>
                             </tr>
                             <tr class ="spaceUnder">
                                 <th id="v_4"></th>
@@ -193,9 +215,18 @@
                                 <th id="v_6"></th>
                             </tr>
                             <tr >
-                                <td><canvas id="visitor4"></canvas></td>
-                                <td><canvas id="visitor5"></canvas></td>
-                                <td><canvas id="visitor6"></canvas></td>
+                                <td>
+                                    <input id="Rmv4" width="20" height="20" type='button' value="x"  onclick='clearVisitor("visitor4",4);'>
+                                    <canvas id="visitor4"></canvas>
+                                </td>
+                                <td>
+                                    <input id="Rmv5" width="20" height="20" type='button' value="x"  onclick='clearVisitor("visitor5",5);'>
+                                    <canvas id="visitor5"></canvas>
+                                </td>
+                                <td>
+                                    <input id="Rmv6" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor6",6);'>
+                                    <canvas id="visitor6"></canvas>
+                                </td>
 
                             </tr>
                         </table>
@@ -308,6 +339,14 @@
         let visitorsCount = 1;
 
 
+        function removeVisitor(index){
+            if(visitors.length > 0 ){
+
+                visitors.splice(index,index+1);
+                visitorsCount =index;
+            }
+
+        }
 
 		function startVideoProcessing(){
 
@@ -430,8 +469,8 @@
 
 
 		function drawVisitor(ctx) {
-            ctx.canvas.width = 640/3;
-            ctx.canvas.height = 480/2;
+            ctx.canvas.width = 640/3.3;
+            ctx.canvas.height = 480/2.2;
             canvasVideoCtx = document.getElementById('video-canvas').getContext('2d');
             frameData = canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight)
             var newCanvas = $("<canvas>")
@@ -448,10 +487,6 @@
 
         function cleanOverlay (ms){
 
-            return new Promise(resolve => setTimeout(resolve,ms))
-            console.log("cleaning");
-            const context = overlayCanvas.getContext('2d');
-            context.clearRect(0,0,overlayCanvas.width,overlayCanvas.height);
 
         }
         async function encode(){

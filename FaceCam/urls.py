@@ -26,7 +26,6 @@ from userInterface import views
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-
     path('', RedirectView.as_view(url='accounts/login')),
     #auth urls
     path('accounts/', include('django.contrib.auth.urls')),
