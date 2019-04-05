@@ -157,8 +157,8 @@
                             <p class="rightRotate p">Position(up or down):
                                 <span id="servoPos2"></span>
                             </p>
-                            {% csrf_token %}
                             <form method="post">
+                                {% csrf_token %}
                                 <input type="range" name="vectival" min="0" max="180" orient="vertical" class="sliderForm" id="servoSlider2" onchange="servo2(this.value)"/><br/>
                                 <button  type="submit"  value="Rotate" onclick="sending();" >Rotate</button>
                             </form>
