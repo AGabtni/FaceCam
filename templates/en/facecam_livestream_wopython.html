@@ -34,7 +34,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-brand">
-                    <div id="Text16" class="Widget Text" role=""><a href="{% url 'index' %}"<span>FaceCam</span></div>
+                    <div id="Text16" class="Widget Text" role=""><a href="{% url 'index' %}"></a><span>FaceCam</span></div>
                 </div>
                 <div class="collapse navbar-collapse justify-content-between" id="Navbar2Responsive">
                     {% if user.is_authenticated %}
@@ -124,7 +124,17 @@
                                 <th id="v_3"></th>
                             </tr>
                             <tr>
-                                <td><canvas id="visitor1"></canvas></td>
+
+                                <td>
+                                    <input  type="hidden" id="canvasData" name="canvasData"/>
+                                    <input type='button' value="update" onclick='updateData();'>
+                                    <canvas id="visitor1"></canvas>
+                                    <script type="text/javascript">
+                                        function updateData() {
+                                        $('#canvasData')[0].value = $('canvas')[0].toDataURL();}
+                                    </script>
+
+                                </td>
                                 <td><canvas id="visitor2"></canvas></td>
                                 <td><canvas id="visitor3"></canvas></td>
                             </tr>
@@ -183,43 +193,23 @@
     <script src="{% static 'js/face-api.js' %}"></script>
     <script type="text/javascript">
 
+        var canvas = document.getElementById('video-canvas');
+		var url = 'ws://45.61.49.21:8082/';
+		var player = new JSMpeg.Player(url, {canvas: canvas, disableGl: true});
+		startVideoProcessing();
+
+
 		let videoWidth = 640;
 		let videoHeight = 480;
 
-		// whether streaming video from the camera.
-		let streaming = true;
 
-		let detectFace = document.getElementById('face');
-		let detectEye = document.getElementById('eye');
-
-
-		let faceClassifier = null;
-		let eyeClassifier = null;
-
-		let src = null;
-		let dstC1 = null;
-		let dstC3 = null;
-		let dstC4 = null;
-
-		let canvasBuffer = null;
-		let canvasBufferCtx = null;
 
 		let visitors = [];
         let visitorsCount = 1;
-        input = document.getElementById("video-canvas");
 
 
-		function startVideoProcessing() {
 
-		    canvasVideo = document.getElementById('video-canvas');
-
-		  canvasBuffer = document.createElement('canvas');
-		  canvasBuffer.width = videoWidth;
-		  canvasBuffer.height = videoHeight;
-
-		  canvasBufferCtx = canvasBuffer.getContext('2d');
-
-
+		function startVideoProcessing(){
 
 		  //New code :
             loadModels();
@@ -240,58 +230,19 @@
 
 		    await recogniton();
         }
-        function cleanOverlay (ms){
-
-            return new Promise(resolve => setTimeout(resolve,ms))
-            console.log("cleaning");
-            const context = overlayCanvas.getContext('2d');
-            context.clearRect(0,0,overlayCanvas.width,overlayCanvas.height);
-
-        }
-        async function encode(){
-
-
-		    const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
-
-            const labeledFaceDescriptors = await Promise.all(
-                labels.map(async label => {
-                        // fetch image data from urls and convert blob to HTMLImage element
-                        const staticUrl = "{% static 'dataset' %}";
-                        const labelUrl ='/'+label+'.png';
-                        const imgUrl =staticUrl+labelUrl;
-
-                        const img = await faceapi.fetchImage(imgUrl);
-
-                        // detect the face with the highest score in the image and compute it's landmarks and face descriptor
-                        const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
-                            //.withFaceLandmarks().withFaceDescriptor()
-
-                        if (!fullFaceDescription) {
-                          throw new Error('no faces detected for '+label);
-                        }else{
-                            console.log("Encoding for : "+label);
-                        }
-                        const faceDescriptors = [fullFaceDescription.descriptor];
-
-                        return new faceapi.LabeledFaceDescriptors(label, faceDescriptors);
-                    })
-            );
-            const maxDescriptorDistance = 0.6;
-            return new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
-        }
         async function recogniton() {
 
-            const overlayCanvas = document.getElementById('overlay');
-            overlayCanvas.width = input.width;
-            overlayCanvas.height = input.height;
+            const overlayCanvas = document.getElementById("overlay");
+            overlayCanvas.width = document.getElementById("video-canvas").width;
+            overlayCanvas.height = document.getElementById("video-canvas").height;
 
-            const detections = await faceapi.detectAllFaces(input).withFaceLandmarks().withFaceDescriptors();
+            const detections = await faceapi.detectAllFaces(document.getElementById("video-canvas")).withFaceLandmarks().withFaceDescriptors();
 
-            faceapi.drawDetection(overlayCanvas, detections, { withScore: true });
+            faceapi.drawDetection(overlayCanvas, detections,{ withScore: true });
 
 
 
-            if(detections.length > 0)
+            if(detections.length > 0 )
             {
                 //FaceMtcher results
 
@@ -381,7 +332,7 @@
 		function drawVisitor(ctx) {
             ctx.canvas.width = 640/3;
             ctx.canvas.height = 480/2;
-            canvasVideoCtx = input.getContext('2d');
+            canvasVideoCtx = document.getElementById('video-canvas').getContext('2d');
             frameData = canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight)
             var newCanvas = $("<canvas>")
                     .attr("width", frameData.width)
@@ -395,22 +346,47 @@
 
 
 
-		function initUI() {
-		  stats = new Stats();
-		  stats.showPanel(0);
-		  document.getElementById('container').appendChild(stats.dom);
-		}
+        function cleanOverlay (ms){
 
-		function opencvIsReady() {
-		  console.log('OpenCV.js is ready');
-		  initUI();
-		  startVideoProcessing();
-		}
+            return new Promise(resolve => setTimeout(resolve,ms))
+            console.log("cleaning");
+            const context = overlayCanvas.getContext('2d');
+            context.clearRect(0,0,overlayCanvas.width,overlayCanvas.height);
 
-        var canvas = document.getElementById('video-canvas');
-		var url = 'ws://45.61.49.21:8082/';
-		var player = new JSMpeg.Player(url, {canvas: canvas, disableGl: true});
-		startVideoProcessing();
+        }
+        async function encode(){
+
+
+		    const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
+
+            const labeledFaceDescriptors = await Promise.all(
+                labels.map(async label => {
+                        // fetch image data from urls and convert blob to HTMLImage element
+                        const staticUrl = "{% static 'dataset' %}";
+                        const labelUrl ='/'+label+'.png';
+                        const imgUrl =staticUrl+labelUrl;
+
+                        const img = await faceapi.fetchImage(imgUrl);
+
+                        // detect the face with the highest score in the image and compute it's landmarks and face descriptor
+                        const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
+                            //.withFaceLandmarks().withFaceDescriptor()
+
+                        if (!fullFaceDescription) {
+                          throw new Error('no faces detected for '+label);
+                        }else{
+                            console.log("Encoding for : "+label);
+                        }
+                        const faceDescriptors = [fullFaceDescription.descriptor];
+
+                        return new faceapi.LabeledFaceDescriptors(label, faceDescriptors);
+                    })
+            );
+            const maxDescriptorDistance = 0.6;
+            return new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
+        }
+
+
 	</script>
     <script type="text/javascript">
     </script>

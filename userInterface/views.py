@@ -25,6 +25,8 @@ import face_recognition
 import pickle
 from userInterface.models import Visitor
 from datetime import datetime
+import re
+
 
 def signup(request):
     if request.method == 'POST':
@@ -46,6 +48,7 @@ def userInfo(request):
 
 @login_required
 def recogn(request):
+
     return render(request, 'en/facecam_livestream_page.html', None)
 
 
@@ -218,6 +221,13 @@ def startListen():
     finally:
         connection.close()
         server_socket.close()
+
+def catchImage():
+    datauri = 'data:image/png;base64,iVBORw0K'
+    imgstr = re.search(r'base64,(.*)', datauri).group(1)
+    output = open('output.png', 'wb')
+    output.write(imgstr.decode('base64'))
+    output.close()
 
 
 def stream_view(request):
