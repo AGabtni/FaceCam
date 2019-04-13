@@ -26,8 +26,14 @@ import pickle
 from userInterface.models import Visitor
 from datetime import datetime
 import re
+from userInterface.forms import FrameForm
+from django.views.generic.edit import FormView
 
 
+class FrameProcess(FormView):
+    form_class = FrameForm
+    def form_valid(self, form):
+        form.get_frame()
 
 
 
