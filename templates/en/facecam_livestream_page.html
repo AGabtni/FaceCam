@@ -1,4 +1,7 @@
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
+
 <html lang="en">
     <style>
         #container{
@@ -112,13 +115,16 @@
             <div id="Container20" class="parent" >
 
                 <div id="Container21" class="previous">
-                     <!--
-                     <img class="center-block" id="video-canvas" src="{% url 'stream_view'%} " width="">
-                     </img>
-                     -->
-                     <canvas id="video-canvas" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
-                     <canvas id="overlay" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+                    <canvas id="video-canvas" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+                    <canvas id="overlay" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
   				 </div>
+                <div>
+                    <form action="" method="post">{% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Submit Frame" />
+
+                    </form>
+                </div>
 
                 <div id="Container22" class="next" >
                     <table>
@@ -201,8 +207,15 @@
 		var player = new JSMpeg.Player(url, {canvas: canvas, disableGl: true});
 
 		var dataURL = document.getElementById('video-canvas').toDataURL("image/png");
-		$('#id_hidden_image_field').val(dataURL)
-		//document.getElementById('id_hidden_image_field').value = dataURL;
+
+        $('#form').submit(function(e){
+            $.post({% url 'FrameProcess' %}, $(this).serialize(), function(data){
+
+                $('id_hidden_image_field').val(dataURL);
+                $('agreement_form').submit();
+            });
+            e.preventDefault();
+        });
 
     </script>
     <!--

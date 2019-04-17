@@ -56,6 +56,35 @@
             </nav>
         </header>
         <style>
+            .visitorCanvas{
+                height: 192px;
+                width: 256px ;
+                outline: midnightblue 3px solid;
+            }
+             .visitor_header{
+                 text-align: center
+             }
+             #overlayUI{
+
+                 position: absolute; /* Hidden by default */
+                 width: 256px; /* Full width (cover the whole page) */
+                 height: 192px; /* Full height (cover the whole page) */
+                 z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+                 cursor: pointer; /* Add a pointer on hover */
+             }
+             #overlay-canvas{
+                 position: absolute;
+                 z-index: 2;
+             }
+             .removebtn{
+                position: absolute;
+
+             }
+
+            .updateVisitor{
+                position: absolute;
+                margin-left: 73.75%;
+            }
             .parent {
               position: relative;
               width: 100%;
@@ -63,39 +92,35 @@
 
             }
             .previous, .next {
-              position: absolute;
-              width: 30%;
-              height: 50%;
-              top: 0;
-              bottom: 0;
-              margin: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
             }
             .previous {
-              left: 0;
-              margin-left: 15px;
-                margin-bottom: 150px;
+                left: 0;
+                margin-left: 15px;
             }
             .next {
-              right: 0;
-
-              margin-right: 200px;
-
+                right: 0;
+                padding-top: 17%;
+                margin-right: 15px;
             }
+
             .aParent div {
                 float: left;
                 clear: none;
             }
-
-            #container {
-
-
-            }
+             table{
+                 align-content: center;
+             }
+            td{
+                padding-right: 10px;
+             }
             tr.spaceUnder>td {
                 padding-bottom: 1em;
             }
-            td,th {
-                padding-left: 2em;
-            }
+
             .rightRotate{
 
                 margin-left: 700px;
@@ -148,10 +173,8 @@
                             </form>
                         </div>
                         <div class="stream" style="position: relative;">
-                            <canvas id="video-canvas" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 0;">
-
-                            </canvas>
-                            <canvas id="overlay" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+                            <canvas id="overlay-canvas" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+                            <canvas id="video-canvas" width="100" height="100" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
                         </div>
 
   				    </div>
@@ -162,41 +185,39 @@
                             <form method="post">
                                 {% csrf_token %}
                                 <input type="range" name="vectival" min="0" max="180" orient="vertical" class="sliderForm" id="servoSlider2" onchange="servo2(this.value)"/><br/>
-                                <button  type="submit"  value="Rotate" onclick="sending();" >Rotate</button>
+
                             </form>
 
                         </div>
 
                     <div id = "Container22" class="next">
-                        <script type="text/javascript">
 
-                             function clearVisitor(visitor,index) {
-
-                                 console.log("cleaning");
-                                 canvas = document.getElementById(visitor);
-                                 title = document.getElementById('v_'+index)
-                                 const context = canvas.getContext('2d');
-
-                                 //hardcoded values
-                                 context.clearRect(0,0,193*3.35,218*2.2);
-                                 title.innerHTML = "";
-                                 removeVisitor(index);
-                             }
-                        </script>
                         <table>
                             <tr>
-                                <th id="v_1"></th>
-                                <th id="v_2"></th>
-                                <th id="v_3"></th>
+                                <th class="visitor_header" id="v_1">Visitor 1</th>
+                                <th class="visitor_header" id="v_2"></th>
+                                <th class="visitor_header"  id="v_3"></th>
                             </tr>
                             <tr>
 
                                 <td>
-
+                                    <!--
                                     <input  type="hidden" id="canvasData" name="canvasData"/>
-                                    <input type='button' value="update" onclick='updateData();'>
-                                    <input  id="Rmv6" width="20" height="200" type='button' value="x" onclick='clearVisitor("visitor1",1);'>
-                                    <canvas id="visitor1"></canvas>
+                                    <input type='button' value="update" onclick='updateData();'>-->
+
+                                     <div id = "overlayUI">
+                                         <input class = "removebtn" id="Rmv1" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor1",0);'>
+
+                                         <form action="{% url 'add_visitor' %}" method="POST" id="post-form">
+                                             <div id="results"></div>
+                                             {% csrf_token %}
+                                             <button type="submit" class="updateVisitor">Update</button>
+                                         </form>
+
+                                     </div>
+                                    <canvas class="visitorCanvas" id="visitor1">
+
+                                    </canvas>
                                     <script type="text/javascript">
                                         function updateData() {
                                         $('#canvasData')[0].value = $('canvas')[0].toDataURL();}
@@ -204,30 +225,43 @@
 
                                 </td>
                                 <td>
-                                    <input id="Rmv2" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor2",2);'>
-                                    <canvas id="visitor2"></canvas></td>
+                                    <div id = "overlayUI">
+                                        <input class = "removebtn" id="Rmv2"  type='button' value="x" onclick='clearVisitor("visitor2",1);'>
+
+                                    </div>
+                                    <canvas class="visitorCanvas" id="visitor2"></canvas>
+                                </td>
+
                                 <td>
-                                    <input id="Rmv3" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor3",3);'>
-                                    <canvas id="visitor3"></canvas>
+                                    <div id="overlayUI">
+                                        <input class = "removebtn" id="Rmv3" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor3",2);'>
+                                    </div>
+                                    <canvas class="visitorCanvas" id="visitor3"></canvas>
                                 </td>
                             </tr>
                             <tr class ="spaceUnder">
-                                <th id="v_4"></th>
-                                <th id="v_5"></th>
-                                <th id="v_6"></th>
+                                <th class="visitor_header" id="v_4"></th>
+                                <th class="visitor_header" id="v_5"></th>
+                                <th class="visitor_header" id="v_6"></th>
                             </tr>
                             <tr >
                                 <td>
-                                    <input id="Rmv4" width="20" height="20" type='button' value="x"  onclick='clearVisitor("visitor4",4);'>
-                                    <canvas id="visitor4"></canvas>
+                                    <div id="overlayUI">
+                                        <input id="Rmv4" width="20" height="20" type='button' value="x"  onclick='clearVisitor("visitor4",3);'>
+                                    </div>
+                                    <canvas class="visitorCanvas" id="visitor4"></canvas>
                                 </td>
                                 <td>
-                                    <input id="Rmv5" width="20" height="20" type='button' value="x"  onclick='clearVisitor("visitor5",5);'>
-                                    <canvas id="visitor5"></canvas>
+                                    <div id="overlayUI">
+                                        <input id="Rmv5" width="20" height="20" type='button' value="x"  onclick='clearVisitor("visitor5",4);'>
+                                    </div>
+                                    <canvas class="visitorCanvas" id="visitor5"></canvas>
                                 </td>
                                 <td>
-                                    <input id="Rmv6" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor6",6);'>
-                                    <canvas id="visitor6"></canvas>
+                                    <div id="overlayUI">
+                                        <input id="Rmv6" width="20" height="20" type='button' value="x" onclick='clearVisitor("visitor6",5);'>
+                                    </div>
+                                    <canvas class="visitorCanvas" id="visitor6"></canvas>
                                 </td>
 
                             </tr>
@@ -273,6 +307,47 @@
     <script type="text/javascript" src="../../static/widgets/_global/Image/js/Image.js?v=1.0.42-beta"></script>
     {% load static %}
     <script src="{% static 'js/face-api.js' %}"></script>
+
+    <script type="text/javascript">
+        // Submit post on submit
+        $('#post-form').on('submit', function(event){
+                event.preventDefault();
+                console.log("form submitted!");
+                create_post();
+
+        });
+
+
+        function create_post() {
+            console.log("create post is working!") // sanity check
+            $.ajax({
+                url : {% url 'add_visitor' %}, // the endpoint
+                type : "POST", // http method
+                data : {
+
+                    name : $('#v_1').val(),
+                    frame : $('#v_2').val(),
+                    visit_date : new Date().getTime(),
+
+
+                }, // data sent with the post request
+
+                // handle a successful response
+                success : function(json) {
+                    $('#v_1').val(''); // remove the value from the input
+                    console.log(json); // log the returned json to the console
+                    console.log("success"); // another sanity check
+                },
+
+                // handle a non-successful response
+                error : function(xhr,errmsg,err) {
+                    $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                        " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+                    console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                }
+            });
+        };
+    </script>
     <script type="text/javascript">
     var slider = document.getElementById("servoSlider");
     var servoP = document.getElementById("servoPos");
@@ -289,7 +364,7 @@
       slider2.value = this.value;
       servoP2.innerHTML = this.value;
     }
-	var url = 'ws://192.168.0.194:5000';
+	var url = 'ws://172.20.10.5:5000';
 	var mySocket = new WebSocket(url);
 
 	mySocket.onopen = function () {
@@ -337,15 +412,32 @@
 
 
 
-		let visitors = [];
-        let visitorsCount = 1;
+		let visitorsNames = [];
+		let visitorsDescriptors = [];
+        let visitorsCount = 0;
+        const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
 
+        const overlayCanvas = document.getElementById("overlay-canvas");
+        const videoCanvas = document.getElementById("video-canvas");
+        var currentVisitorIndex = 0;
+        function clearVisitor(visitor,index) {
+            currentVisitorIndex = index;
+            console.log("cleaning");
+            canvas = document.getElementById(visitor);
+            const context = canvas.getContext('2d');
+            let title = document.getElementById("v_"+(index+1));
+            //hardcoded values
+            context.clearRect(0,0,193*3.35,218*2.2);
+            title.innerHTML = "";
 
+            removeVisitor(index);
+        }
         function removeVisitor(index){
-            if(visitors.length > 0 ){
+            if(visitorsNames.length > 0 ){
+                console.log("removing number "+index);
+                visitorsNames.splice(index,index+1);
 
-                visitors.splice(index,index+1);
-                visitorsCount =index;
+                visitorsCount -=1;
             }
 
         }
@@ -356,6 +448,11 @@
             loadModels();
 
 		}
+
+		let  labeledFaceDescriptors;
+        let faceMatcher;
+        let fullFaceDescriptions;
+        let detectionsArray;
 
 
         async function loadModels() {
@@ -368,111 +465,200 @@
             //alert("Descriptions + labels aquired from dataset");
 
             //const FaceMatcher = await encode();
-
-		    await recogniton();
-        }
-        async function recogniton() {
-
-            const overlayCanvas = document.getElementById("overlay");
+            const overlayCanvas = document.getElementById("overlay-canvas");
             overlayCanvas.width = document.getElementById("video-canvas").width;
             overlayCanvas.height = document.getElementById("video-canvas").height;
+            if(labeledFaceDescriptors == null){
+                    labeledFaceDescriptors= await Promise.all(
+                        labels.map(async label => {
+                                // fetch image data from urls and convert blob to HTMLImage element
+                                const staticUrl = "{% static 'dataset' %}";
+                                const labelUrl ='/'+label+'.png';
+                                const imgUrl =staticUrl+labelUrl;
 
-            const detections = await faceapi.detectAllFaces(document.getElementById("video-canvas")).withFaceLandmarks().withFaceDescriptors();
+                                const img = await faceapi.fetchImage(imgUrl);
 
-            faceapi.drawDetection(overlayCanvas, detections,{ withScore: true });
+                                // detect the face with the highest score in the image and compute it's landmarks and face descriptor
+                                const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
+                                    //.withFaceLandmarks().withFaceDescriptor()
+
+                                if (!fullFaceDescription) {
+                                  throw new Error('no faces detected for '+label);
+                                }else{
+                                    console.log("Encoding for : "+label);
+                                }
+                                const faceDescriptors = [fullFaceDescription.descriptor];
+
+                                return new faceapi.LabeledFaceDescriptors(label, faceDescriptors);
+                            })
+                    );
+
+
+                }
+            if (faceMatcher == null){
+                    const maxDescriptorDistance = 0.6;
+                    faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
+
+                }
+            alert("Finished encoding the dataset now starting recognition from incoming stream ..");
+
+            await detection();
+		    await recogniton();
+
+        }
+
+        async function detection(){
 
 
 
-            if(detections.length > 0 )
-            {
-                //FaceMtcher results
+            overlayCanvas.width = videoCanvas.width;
+            overlayCanvas.height = videoCanvas.height;
 
-                const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
+            fullFaceDescriptions = await faceapi.detectAllFaces(videoCanvas).withFaceLandmarks().withFaceDescriptors();
+            detectionsArray = fullFaceDescriptions.map(fd => fd.detection);
 
-                const labeledFaceDescriptors = await Promise.all(
-                    labels.map(async label => {
-                            // fetch image data from urls and convert blob to HTMLImage element
-                            const staticUrl = "{% static 'dataset' %}";
-                            const labelUrl ='/'+label+'.png';
-                            const imgUrl =staticUrl+labelUrl;
+            faceapi.drawDetection(overlayCanvas, detectionsArray);
+            setTimeout(() => detection());
 
-                            const img = await faceapi.fetchImage(imgUrl);
+        }
 
-                            // detect the face with the highest score in the image and compute it's landmarks and face descriptor
-                            const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
-                                //.withFaceLandmarks().withFaceDescriptor()
+        async function recogniton() {
 
-                            if (!fullFaceDescription) {
-                              throw new Error('no faces detected for '+label);
-                            }else{
-                                console.log("Encoding for : "+label);
-                            }
-                            const faceDescriptors = [fullFaceDescription.descriptor];
+            if(fullFaceDescriptions.length > 0){
 
-                            return new faceapi.LabeledFaceDescriptors(label, faceDescriptors);
-                        })
-                );
 
-                const maxDescriptorDistance = 0.6;
-                const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
-                const results = detections.map(fd=> faceMatcher.findBestMatch(fd.descriptor));
+                const results = fullFaceDescriptions.map(fd=> faceMatcher.findBestMatch(fd.descriptor));
 
                 if(results.length > 0){
                         var name = "Unknown";
                         const boxesWithText = results.map((bestMatch, i) => {
-                            const box = detections[i].detection.box;
+                            const box = fullFaceDescriptions[i].detection.box;
                             const text = bestMatch.toString();
-                            name = text;
+                            var newText = text.substring(0,text.length-7);
+                            name = newText;
                             const boxWithText = new faceapi.BoxWithText(box, text);
                             return boxWithText;
                         });
                         faceapi.drawDetection(overlayCanvas, boxesWithText);
-                        if(visitors.length <6){
-                            canvasVisitor = document.getElementById('visitor'+visitorsCount);
+                        if( visitorsCount<6 ){
+
+                            canvasVisitor = document.getElementById('visitor'+(currentVisitorIndex+1));
+
                             canvasVisitorCtx = canvasVisitor.getContext('2d');
+                            if(visitorsCount > 0 )
+                            {
+                                const descriptorRef = await faceapi.computeFaceDescriptor(videoCanvas);
 
-                            visitorName = name;
-                            visitors.push(visitorName);
+                                for(var i=0; i< visitorsCount;i++){
 
-                            drawVisitor(canvasVisitorCtx);
-                            document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
-                            visitorsCount +=1 ;
+
+                                    const distance = faceapi.euclideanDistance(descriptorRef,visitorsDescriptors[i]);
+
+                                    if(distance<0.45){
+                                        console.log("Already Here");
+                                        console.log(distance);
+                                        break;
+                                    }
+                                    else {
+                                        console.log('Added visitor new ');
+                                        visitorsNames[currentVisitorIndex]= name;
+                                        visitorsDescriptors[currentVisitorIndex]= descriptorRef;
+                                        drawVisitor(canvasVisitorCtx);
+                                        document.getElementById("v_"+(currentVisitorIndex+1)).innerHTML = name ;
+                                        visitorsCount +=1;
+                                        currentVisitorIndex +=1;
+                                        break;
+                                    }
+                                }
+                            }
+                            else{
+                                const descriptor1 = await faceapi.computeFaceDescriptor(videoCanvas);
+                                visitorsNames[currentVisitorIndex]= name;
+                                visitorsDescriptors[currentVisitorIndex]= descriptor1;
+                                drawVisitor(canvasVisitorCtx);
+                                document.getElementById("v_"+(currentVisitorIndex+1)).innerHTML = name ;
+                                visitorsCount +=1;
+                                currentVisitorIndex +=1;
+
+                            }
+
+
+
+
+
+
+                        }
+
+
+                }
+                else if( results.length <= 0 ){
+
+                    if( visitorsCount<6 ){
+
+                            canvasVisitor = document.getElementById('visitor'+(currentVisitorIndex+1));
+
+                            canvasVisitorCtx = canvasVisitor.getContext('2d');
+                            if(visitorsCount > 0 )
+                            {
+                                const descriptorRef = await faceapi.computeFaceDescriptor(videoCanvas);
+
+                                for(var i=0; i< visitorsCount;i++){
+
+
+                                    const distance = faceapi.euclideanDistance(descriptorRef,visitorsDescriptors[i]);
+
+                                    if(distance<0.62){
+                                        console.log("Already Here");
+                                        console.log(distance);
+                                        break;
+                                    }
+                                    else {
+                                        console.log('Added visitor new ');
+                                        visitorsNames[currentVisitorIndex]= name;
+                                        visitorsDescriptors[currentVisitorIndex]= descriptorRef;
+                                        drawVisitor(canvasVisitorCtx);
+                                        document.getElementById("v_"+(currentVisitorIndex+1)).innerHTML = name ;
+                                        visitorsCount +=1;
+                                        currentVisitorIndex +=1;
+                                        break;
+                                    }
+                                }
+                            }
+                            else{
+                                const descriptor1 = await faceapi.computeFaceDescriptor(videoCanvas);
+                                visitorsNames[currentVisitorIndex]= name;
+                                visitorsDescriptors[currentVisitorIndex]= descriptor1;
+                                drawVisitor(canvasVisitorCtx);
+                                document.getElementById("v_"+(currentVisitorIndex+1)).innerHTML = name ;
+                                visitorsCount +=1;
+                                currentVisitorIndex +=1;
+
+                            }
+
+
+
+
+
 
                         }
 
                 }
-                else{
-                    faceapi.drawDetection(overlayCanvas, detections, { withScore: true });
-
-                    if(visitors.length <6){
-                        canvasVisitor = document.getElementById('visitor'+visitorsCount);
-                        canvasVisitorCtx = canvasVisitor.getContext('2d');
-
-                        visitorName = "Unknow visitor "+visitorsCount;
-                        visitors.push(visitorName);
-
-                        drawVisitor(canvasVisitorCtx);
-                        document.getElementById("v_"+visitorsCount).innerHTML = visitors[visitorsCount-1];
-                        visitorsCount +=1 ;
-                    }
-
-
-                }
 
             }
-            else if (detections == null)
-            {
 
-            }
             setTimeout(() => recogniton());
 
         }
 
 
+        function timeout(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
 
-		function drawVisitor(ctx) {
-            ctx.canvas.width = 640/3.3;
-            ctx.canvas.height = 480/2.2;
+
+		async function drawVisitor(ctx) {
+            ctx.canvas.width = 640*0.4;
+            ctx.canvas.height = 480*0.4;
             canvasVideoCtx = document.getElementById('video-canvas').getContext('2d');
             frameData = canvasVideoCtx.getImageData(0, 0, videoWidth, videoHeight)
             var newCanvas = $("<canvas>")
@@ -481,47 +667,11 @@
             newCanvas.getContext("2d").putImageData(frameData, 0, 0);
             ctx.scale(ctx.canvas.width/640,ctx.canvas.width/480)
             ctx.drawImage(newCanvas,0,0);
-
-
-        }
-
-
-
-        function cleanOverlay (ms){
-
+            await timeout(3000);
 
         }
-        async function encode(){
 
 
-		    const labels = ['Ahmed_Gabtni' ,'Colombe_Shellariel', 'Jose_Carreras'];
-
-            const labeledFaceDescriptors = await Promise.all(
-                labels.map(async label => {
-                        // fetch image data from urls and convert blob to HTMLImage element
-                        const staticUrl = "{% static 'dataset' %}";
-                        const labelUrl ='/'+label+'.png';
-                        const imgUrl =staticUrl+labelUrl;
-
-                        const img = await faceapi.fetchImage(imgUrl);
-
-                        // detect the face with the highest score in the image and compute it's landmarks and face descriptor
-                        const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
-                            //.withFaceLandmarks().withFaceDescriptor()
-
-                        if (!fullFaceDescription) {
-                          throw new Error('no faces detected for '+label);
-                        }else{
-                            console.log("Encoding for : "+label);
-                        }
-                        const faceDescriptors = [fullFaceDescription.descriptor];
-
-                        return new faceapi.LabeledFaceDescriptors(label, faceDescriptors);
-                    })
-            );
-            const maxDescriptorDistance = 0.6;
-            return new faceapi.FaceMatcher(labeledFaceDescriptors, maxDescriptorDistance);
-        }
 
 
 	</script>

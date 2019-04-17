@@ -40,7 +40,7 @@
                     <ul class="Widget Navigation navbar-nav nav" id="Navigation17" role="navigation">
                         {% if user.is_authenticated %}
                             <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem68" role="menuitem"> <a href="#" >{{ user.get_username }}</a> </li>
-                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem69" role="menuitem"> <a href="{% url 'recogn' %}" >FaceCam LiveStream</a> </li>
+                            <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem69" role="menuitem"> <a href="{% url 'recognWoPy' %}" >FaceCam LiveStream</a> </li>
                             <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem70" role="menuitem"> <a href="#" >Documentations</a> </li>
                             <li class="Widget NavigationItem nav-item nav-link" id="NavigationItem71" role="menuitem"> <a href="#" >Contact</a> </li>
                             <li style="color:white;" class="Widget NavigationItem nav-item nav-link" id="NavigationItem72" role="menuitem">
@@ -75,12 +75,12 @@
 
                         <h1 id="Title51" class="Widget Title" role="">
                             <p>
-                                <span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">Facial Recognition</span>
+                                <span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">Surveillance Cam</span>
                                 <br>
                             </p>
                         </h1>
-                        <div id="Text158" class="Widget Text" role=""><span>This will give you access to the face recognition functionality of your FaceCam</span></div>
-                        <a href="/.html" id="Link1" class="Widget Link" role="">
+                        <div id="Text158" class="Widget Text" role=""><span>This will give you access to the security livestream</span></div>
+                        <a href="{% url "livestream" %}" id="Link1" class="Widget Link" role="">
                             <p>
                                 <span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">More info</span>
                                 <br>
@@ -105,7 +105,7 @@
                             <p>FaceCam Live Stream</p>
                         </h1>
                         <div id="Text156" class="Widget Text" role=""><span>This will give you access to the live stream of your FaceCam</span></div>
-                        <a href="{% url 'recogn' %}" id="Link4" class="Widget Link" role="">More Info
+                        <a href="{% url 'recognWoPy' %}" id="Link4" class="Widget Link" role="">More Info
 </a>
                     </section>
                     <section id="Section81" class="Widget Section" role="">

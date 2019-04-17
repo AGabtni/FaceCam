@@ -18,7 +18,7 @@ from django.http import HttpResponseRedirect, HttpResponse, HttpResponseServerEr
 from django.http import StreamingHttpResponse
 from django.template import Context, Template
 from django.views.decorators import gzip
-from userInterface.forms import SignUpForm
+from userInterface.forms import SignUpForm, VisitorForm
 from django.urls import reverse
 import imutils
 import face_recognition
@@ -26,16 +26,33 @@ import pickle
 from userInterface.models import Visitor
 from datetime import datetime
 import re
-from userInterface.forms import FrameForm
+import base64
 from django.views.generic.edit import FormView
+from requests import request
 
 
-class FrameProcess(FormView):
-    form_class = FrameForm
-    def form_valid(self, form):
-        form.get_frame()
+def FrameProcess(request):
 
+    if request.method == 'POST':
+        print("getting")
+        form = FrameForm(request.POST)
+        if form.is_valid():
+            dataUrlPattern = re.compile('data:image/(png|jpeg);base64,(.*)$')
+            ImageData = request.POST.get('hidden_image_field')
+            ImageData = dataUrlPattern.match(ImageData).group(2)
+            # If none or len 0, means illegal image data
+            if (ImageData == None or len(ImageData)) == 0:
+                # PRINT ERROR MESSAGE HERE
+                print("Error getting data")
+                pass
 
+            # Decode the 64 bit string into 32 bit
+            ImageData = base64.b64decode(ImageData)
+            fh = open("imageToSave.png", "wb")
+            fh.write(ImageData)
+            fh.close()
+        else:
+            print("INVALID FORM")
 
 
 def signup(request):
@@ -57,9 +74,31 @@ def userInfo(request):
     return render(request, 'en/authorized_person_page.html', None)
 
 @login_required
-def recogn(request):
+def add_visitor(request):
+    if request.method == 'POST':
+        form = VisitorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            response_data = {}
+            response_data['result'] = 'Create post successful!'
+            response_data['postpk'] = form.pk
+            response_data['name'] = form.text
+            response_data['visit_date'] = form.visit_date.strftime('%I:%M %p')
+            response_data['face'] = form.face
 
-    return render(request, 'en/facecam_livestream_page.html', None)
+            return HttpResponse(
+                json.dumps(response_data),
+                content_type="application/json"
+            )
+        else:
+            return HttpResponse(
+                json.dumps({"nothing to see": "this isn't happening"}),
+                content_type="application/json"
+            )
+
+@login_required
+def livestream(request):
+    return render(request, 'en/facecam_livestream.html', None)
 
 
 @login_required
